@@ -1,4 +1,4 @@
-package chuckeles.sstasker;
+package chuckeles.sstasker.system;
 
 import java.lang.System;
 import java.util.Date;
@@ -31,7 +31,7 @@ public class Log {
    *
    * @param text String to log
    */
-  public Log log(String text) {
+  public Log Log(String text) {
     WriteTime().WriteLn(text);
 
     return this;
