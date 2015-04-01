@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * Created by Martin on 01.04.2015.
+ * Created by Martin on 01.04.2015. Is it a joke?
  *
  * The main model of our spaceship. Singleton. Contains the list of tasks, crew members and inventory items.
  */

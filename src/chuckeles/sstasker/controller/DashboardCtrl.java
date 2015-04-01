@@ -8,7 +8,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 
 /**
- * Created by Martin on 01.04.2015.
+ * Created by Martin on 01.04.2015. Is it a joke?
  *
  * The controller for the dashboard view.
  */

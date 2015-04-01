@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Created by Martin on 01.04.2015.
+ * Created by Martin on 01.04.2015. Is it a joke?
  *
  * The SSTasker Application.
  */
