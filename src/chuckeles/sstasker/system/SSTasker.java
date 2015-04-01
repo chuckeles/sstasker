@@ -41,8 +41,12 @@ public class SSTasker extends Application {
     }
 
     // show the scene
-    mPrimaryStage.setScene(new Scene(mWindow));
+    final Scene scene = new Scene(mWindow);
+    mPrimaryStage.setScene(scene);
     mPrimaryStage.show();
+
+    // add stylesheets
+    scene.getStylesheets().add(SSTasker.class.getResource("/chuckeles/sstasker/view/Style.css").toString());
 
     // load the dashboard
     try {
