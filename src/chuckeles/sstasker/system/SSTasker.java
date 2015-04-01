@@ -3,6 +3,7 @@ package chuckeles.sstasker.system;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -31,8 +32,9 @@ public class SSTasker extends Application {
 
     // load the root layout
     try {
+      Log.Instance().Log("Loading the Window.fxml");
       FXMLLoader loader = new FXMLLoader(SSTasker.class.getResource("/chuckeles/sstasker/view/Window.fxml"));
-      mWindow = (BorderPane)loader.load();
+      mWindow = loader.load();
     }
     catch (IOException e) {
       Log.Instance().Log(e.getMessage());
@@ -41,6 +43,18 @@ public class SSTasker extends Application {
     // show the scene
     mPrimaryStage.setScene(new Scene(mWindow));
     mPrimaryStage.show();
+
+    // load the dashboard
+    try {
+      Log.Instance().Log("Loading the Dashboard.fxml");
+      FXMLLoader loader = new FXMLLoader(SSTasker.class.getResource("/chuckeles/sstasker/view/Dashboard.fxml"));
+      AnchorPane dashboard = loader.load();
+
+      mWindow.setCenter(dashboard);
+    }
+    catch (IOException e) {
+      Log.Instance().Log(e.getMessage());
+    }
 
   }
 

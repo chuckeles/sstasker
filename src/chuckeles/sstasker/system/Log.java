@@ -81,7 +81,7 @@ public class Log {
     return this;
   }
 
-  // ---
+  // ------
 
   /**
    * Singleton instance.
