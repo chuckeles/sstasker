@@ -22,7 +22,7 @@ public class Task {
     mTitle = title;
   }
 
-  // ---
+  // ------
 
   /**
    * Set task's description.

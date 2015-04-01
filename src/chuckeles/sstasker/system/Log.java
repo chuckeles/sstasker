@@ -12,7 +12,7 @@ public class Log {
 
   private Log() {}
 
-  // ---
+  // ------
 
   /**
    * Get the singleton instance.
