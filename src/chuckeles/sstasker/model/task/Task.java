@@ -60,7 +60,10 @@ public class Task {
     return mTitle;
   }
 
-  // ---
+  // ------
+
+  // TODO: Maybe change to JavaFX properties
+  // http://code.makery.ch/library/javafx-8-tutorial/part2/
 
   /**
    * The title of the task.
