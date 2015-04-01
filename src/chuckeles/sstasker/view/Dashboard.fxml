@@ -1,7 +1,7 @@
 <?import javafx.scene.control.* ?>
 <?import javafx.scene.layout.* ?>
 
-<AnchorPane prefWidth="800" prefHeight="600">
+<AnchorPane prefWidth="800" prefHeight="600" fx:controller="chuckeles.sstasker.controller.DashboardCtrl" xmlns:fx="http://javafx.com/fxml">
    <SplitPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
 
          <!-- TASKS -->
@@ -10,7 +10,7 @@
                <Label text="Tasks" BorderPane.alignment="CENTER" />
             </top>
             <center>
-               <ListView BorderPane.alignment="CENTER" />
+               <ListView BorderPane.alignment="CENTER" fx:id="taskList" />
             </center>
          </BorderPane>
 

@@ -37,7 +37,7 @@ public class SSTasker extends Application {
       mWindow = loader.load();
     }
     catch (IOException e) {
-      Log.Instance().Log(e.getMessage());
+      Log.Instance().Log(e.toString());
     }
 
     // show the scene
@@ -53,7 +53,7 @@ public class SSTasker extends Application {
       mWindow.setCenter(dashboard);
     }
     catch (IOException e) {
-      Log.Instance().Log(e.getMessage());
+      Log.Instance().Log(e.toString());
     }
 
   }

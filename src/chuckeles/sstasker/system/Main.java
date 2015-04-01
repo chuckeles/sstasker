@@ -17,9 +17,11 @@ public class Main {
   public static void main(String[] args) {
 
     Log.Instance().Log("SSTasker is starting");
+    Log.Instance().WriteLn();
 
     Application.launch(SSTasker.class, args);
 
+    Log.Instance().WriteLn();
     Log.Instance().Log("SSTasker is ending");
 
   }
