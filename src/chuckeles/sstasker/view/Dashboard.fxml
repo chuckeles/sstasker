@@ -1,18 +1,39 @@
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.Label?>
-<AnchorPane>
+<?import javafx.scene.control.* ?>
+<?import javafx.scene.layout.* ?>
 
-  <!-- TASK LIST -->
+<AnchorPane prefWidth="800" prefHeight="600">
+   <SplitPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
 
+         <!-- TASKS -->
+         <BorderPane prefWidth="200">
+            <top>
+               <Label text="Tasks" BorderPane.alignment="CENTER" />
+            </top>
+            <center>
+               <ListView BorderPane.alignment="CENTER" />
+            </center>
+         </BorderPane>
 
-  <!-- MAIN VIEW -->
+         <!-- MAIN VIEW -->
+         <AnchorPane prefWidth="400" />
 
+         <SplitPane orientation="VERTICAL" prefWidth="200">
 
-  <!-- CREW -->
+            <!-- CREW -->
+            <BorderPane prefHeight="300">
+               <top>
+                  <Label text="Crew" BorderPane.alignment="CENTER" />
+               </top>
+            </BorderPane>
 
+            <!-- INVENTORY -->
+            <BorderPane prefHeight="300">
+               <top>
+                  <Label text="Inventory" BorderPane.alignment="CENTER" />
+               </top>
+            </BorderPane>
 
-  <!-- INVENTORY -->
+         </SplitPane>
 
-
-
+   </SplitPane>
 </AnchorPane>
