@@ -1,8 +1,6 @@
 package chuckeles.sstasker.model.task;
 
 /**
- * Created by Martin on 20.03.2015.
- *
  * A task with a name and a description. A task can have assigned crew members and inventory items.
  */
 public class Task {

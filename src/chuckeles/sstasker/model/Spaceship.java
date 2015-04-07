@@ -1,11 +1,10 @@
-package chuckeles.sstasker.model.task;
+package chuckeles.sstasker.model;
 
+import chuckeles.sstasker.model.task.Task;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * Created by Martin on 01.04.2015. Is it a joke?
- *
  * The main model of our spaceship. Singleton. Contains the list of tasks, crew members and inventory items.
  */
 public class Spaceship {

@@ -4,8 +4,6 @@ import java.lang.System;
 import java.util.Date;
 
 /**
- * Created by Martin on 20.03.2015.
- *
  * Writes messages to console and the log file. Singleton.
  */
 public class Log {

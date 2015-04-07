@@ -3,8 +3,6 @@ package chuckeles.sstasker.system;
 import javafx.application.Application;
 
 /**
- * Created by Martin on 01.04.2015. Is it a joke?
- *
  * This class contains the main method.
  */
 public class Main {
@@ -19,7 +17,7 @@ public class Main {
     Log.Instance().Log("SSTasker is starting");
     Log.Instance().WriteLn();
 
-    Application.launch(SSTasker.class, args);
+    Application.launch(SSApplication.class, args);
 
     Log.Instance().WriteLn();
     Log.Instance().Log("SSTasker is ending");
