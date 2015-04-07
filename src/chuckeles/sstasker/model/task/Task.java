@@ -16,7 +16,6 @@ public class Task {
    * @param title Task title
    */
   public Task(String title) {
-    this();
     mTitle = title;
   }
 
