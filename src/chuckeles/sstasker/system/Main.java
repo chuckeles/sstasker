@@ -17,7 +17,7 @@ public class Main {
     Log.Instance().Log("SSTasker is starting");
     Log.Instance().WriteLn();
 
-    Application.launch(SSApplication.class, args);
+    Application.launch(Window.class, args);
 
     Log.Instance().WriteLn();
     Log.Instance().Log("SSTasker is ending");
