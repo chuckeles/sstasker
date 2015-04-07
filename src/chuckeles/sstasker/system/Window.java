@@ -18,14 +18,17 @@ public class Window extends Application {
   public void start(Stage primaryStage) throws Exception {
 
     // set up main stage
+    Log.Instance().Log("Setting up the primary stage");
     mPrimaryStage = primaryStage;
     mPrimaryStage.setTitle("SSTasker");
     mPrimaryStage.setMinWidth(400);
     mPrimaryStage.setMinHeight(300);
 
     // set up scene
+    Log.Instance().Log("Creating the main scene");
     final Scene scene = new Scene(mBrowser, 400, 300);
     mPrimaryStage.setScene(scene);
+    Log.Instance().Log("Showing the scene");
     mPrimaryStage.show();
 
   }

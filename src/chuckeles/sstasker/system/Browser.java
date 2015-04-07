@@ -19,6 +19,7 @@ public class Browser extends Region {
   public Browser() {
     getChildren().add(mBrowser);
 
+    Log.Instance().Log("Loading the index.html file");
     mWebEngine.load(Browser.class.getResource("/chuckeles/sstasker/view/index.html").toExternalForm());
   }
 
