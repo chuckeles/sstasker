@@ -11,3 +11,14 @@ html {
 body {
   min-height: 100%;
 }
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    text-align: center;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: sscolor("primary");
+}
