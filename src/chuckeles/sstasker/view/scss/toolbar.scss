@@ -10,13 +10,9 @@
   color: sscolor("dark");
   background-color: sscolor("light");
 
-  .right {
-    margin-left: auto;
-  }
-
-  a,
-  .button.raw {
+  .button {
     color: sscolor("dark");
+    margin: $margin-sides;
 
     &:hover,
     &:focus,
@@ -24,5 +20,9 @@
     &.active {
       color: sscolor("dark", 3);
     }
+  }
+
+  .right {
+    margin-left: auto;
   }
 }
