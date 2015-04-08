@@ -1,4 +1,4 @@
-package chuckeles.sstasker.model.task;
+package chuckeles.sstasker.model;
 
 /**
  * A task with a name and a description. A task can have assigned crew members and inventory items.
