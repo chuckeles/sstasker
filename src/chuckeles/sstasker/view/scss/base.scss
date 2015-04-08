@@ -1,14 +1,16 @@
 html {
-  font-size: $font-size;
   font-family: $font-family;
+  font-size: $font-size;
 
   height: 100%;
 
-  background-color: sscolor("dark");
   color: sscolor("light");
+  background-color: sscolor("dark");
 }
 
 body {
+  position: relative;
+
   min-height: 100%;
 }
 
@@ -20,5 +22,6 @@ body {
 
 a {
   text-decoration: none;
+
   color: sscolor("primary");
 }
