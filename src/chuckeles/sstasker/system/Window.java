@@ -21,8 +21,8 @@ public class Window extends Application {
     Log.Instance().Log("Setting up the primary stage");
     mPrimaryStage = primaryStage;
     mPrimaryStage.setTitle("SSTasker");
-    mPrimaryStage.setMinWidth(400);
-    mPrimaryStage.setMinHeight(300);
+    mPrimaryStage.setMinWidth(Constants.WINDOW_MIN_WIDTH);
+    mPrimaryStage.setMinHeight(Constants.WINDOW_MIN_HEIGHT);
 
     // set up scene
     Log.Instance().Log("Creating the main scene");
