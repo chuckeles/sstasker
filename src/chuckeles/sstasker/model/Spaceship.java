@@ -33,6 +33,15 @@ public class Spaceship {
     return mTasks;
   }
 
+  /**
+   * Get the spaceship crew.
+   *
+   * @return The list of crew members
+   */
+  public List<Cosmonaut> GetCrew() {
+    return mCrew;
+  }
+
   // ------
 
   /**
@@ -45,4 +54,8 @@ public class Spaceship {
    */
   private List<Task> mTasks = new ArrayList<>();
 
+  /**
+   * The list of crew members.
+   */
+  private List<Cosmonaut> mCrew = new ArrayList<>();
 }
