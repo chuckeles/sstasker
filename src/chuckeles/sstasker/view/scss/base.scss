@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: $font-family;
   font-size: $font-size;
@@ -21,7 +25,15 @@ body {
 }
 
 a {
+  transition: color $transition-time;
   text-decoration: none;
 
   color: sscolor("primary");
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: sscolor("primary", -1);
+  }
 }
