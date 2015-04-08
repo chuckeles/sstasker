@@ -1,2 +1,7 @@
-@import "normalize.scss";
-@import "base.scss";
+@import "normalize";
+
+@import "variables";
+@import "colors";
+
+@import "base";
+@import "layout";

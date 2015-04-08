@@ -1,0 +1,19 @@
+$sscolors: (
+  "primary"   : #fffd98,
+  "secondary" : #bde4a7,
+  "accent"    : #b3d2b2,
+
+  "light"     : #e3dcc2,
+  "dark"      : #1b2021
+);
+
+@function sscolor($name: "primary") {
+  $color: map-get($sscolors, $name);
+
+  @if not($color) {
+    @warn "unknown color: #{$name}";
+    $color: map-get($sscolors, "primary");
+  }
+
+  @return $color;
+}

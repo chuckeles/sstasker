@@ -26,7 +26,7 @@ public class Window extends Application {
 
     // set up scene
     Log.Instance().Log("Creating the main scene");
-    final Scene scene = new Scene(mBrowser, 400, 300);
+    final Scene scene = new Scene(mBrowser, Constants.WINDOW_MIN_WIDTH, Constants.WINDOW_MIN_HEIGHT);
     mPrimaryStage.setScene(scene);
     Log.Instance().Log("Showing the scene");
     mPrimaryStage.show();
