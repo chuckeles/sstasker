@@ -32,4 +32,5 @@ public class Cosmonaut {
    * Name of the cosmonaut.
    */
   private String mName;
+
 }

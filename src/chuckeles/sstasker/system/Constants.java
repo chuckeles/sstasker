@@ -15,4 +15,9 @@ public class Constants {
    */
   public static final int WINDOW_MIN_HEIGHT = 600;
 
+  /**
+   * Default max stack size of an item.
+   */
+  public static final int MAX_STACK_SIZE = 64;
+
 }

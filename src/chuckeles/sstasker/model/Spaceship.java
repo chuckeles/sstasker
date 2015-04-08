@@ -44,4 +44,5 @@ public class Spaceship {
    * The list of tasks.
    */
   private List<Task> mTasks = new ArrayList<>();
+
 }
