@@ -4,4 +4,25 @@
   top: 0;
   right: 0;
   left: 0;
+
+  padding: $padding-small;
+
+  color: sscolor("dark");
+  background-color: sscolor("light");
+
+  .right {
+    margin-left: auto;
+  }
+
+  a,
+  .button.raw {
+    color: sscolor("dark");
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: sscolor("dark", 3);
+    }
+  }
 }
