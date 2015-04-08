@@ -1,0 +1,38 @@
+.loader {
+  width: $loader-size;
+  text-align: center;
+
+  .bounce {
+    width: $loader-bounce-size;
+    height: $loader-bounce-size;
+    background-color: sscolor("light");
+
+    border-radius: 100%;
+    display: inline-block;
+    animation: loader $loader-time infinite ease-in-out;
+    animation-fill-mode: both;
+
+    &.delay1 {
+      animation-delay: -0.32s;
+    }
+
+    &.delay2 {
+      animation-delay: -0.16s;
+    }
+
+    @for $i from 1 through ($loader-bounce-number - 1) {
+      &.delay-#{$i} {
+        animation-delay: (-0.16s * ($loader-bounce-number - $i));
+      }
+    }
+  }
+
+}
+
+@keyframes loader {
+  0%, 60%, 100% {
+    transform: scale(0.0);
+  } 30% {
+    transform: scale(1.0);
+  }
+}
