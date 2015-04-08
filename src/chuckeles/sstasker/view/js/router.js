@@ -5,9 +5,12 @@ angular.module("sstasker")
     $stateProvider
 
       .state("welcome", {
+        templateUrl: "html/welcome.html",
+        controller: "welcomeCtrl"
+      })
 
-        templateUrl: "html/welcome.html"
-
+      .state("dashboard", {
+        templateUrl: "html/dashboard.html"
       });
 
   }]);
