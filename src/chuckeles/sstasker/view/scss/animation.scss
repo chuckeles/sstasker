@@ -1,0 +1,48 @@
+ui-view.ng-enter,
+ui-view.ng-leave {
+	animation-duration: $animation-time;
+}
+
+ui-view.ng-enter {
+	animation-delay: $animation-time;
+	animation-name: zoomIn;
+}
+
+ui-view.ng-leave {
+	animation-name: zoomOut;
+}
+
+ui-view.ng-enter {
+	display: none !important;
+}
+ui-view.ng-enter:last-child {
+	display: block !important;
+}
+
+// http://daneden.github.io/animate.css/
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

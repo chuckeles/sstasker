@@ -1,13 +1,5 @@
 .welcome {
-  animation: welcome .6s cubic-bezier(.175, .885, .320, 1.275);
-
   .author {
     color: sscolor("accent");
-  }
-}
-
-@keyframes welcome {
-  from {
-    transform: scale(0);
   }
 }

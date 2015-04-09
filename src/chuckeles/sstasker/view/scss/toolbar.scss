@@ -25,4 +25,9 @@
   .right {
     margin-left: auto;
   }
+
+  .ng-enter &,
+  .ng-leave & {
+    display: none;
+  }
 }
