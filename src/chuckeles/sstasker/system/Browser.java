@@ -5,6 +5,7 @@ import javafx.geometry.VPos;
 import javafx.scene.layout.Region;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import netscape.javascript.JSObject;
 
 /**
  * The webview. Loads and displays the GUI. Used by the Window.
@@ -21,6 +22,13 @@ public class Browser extends Region {
 
     Log.Instance().Log("Loading the index.html file");
     mWebEngine.load(Browser.class.getResource("/chuckeles/sstasker/view/index.html").toExternalForm());
+
+    mWebEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+      JSInterface jsInterface = new JSInterface();
+      JSObject window = (JSObject) mWebEngine.executeScript("window");
+
+      window.setMember("java", jsInterface);
+    });
   }
 
   // ------
