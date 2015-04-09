@@ -33,7 +33,7 @@ public class Browser extends Region {
         "console.log = function(text) { java.log(text); };"
       );
       mWebEngine.executeScript(
-        "console.error = function(text) { java.log('[error]' + text); };"
+        "console.error = function(text) { java.log('[error] ' + text); };"
       );
     //});
 

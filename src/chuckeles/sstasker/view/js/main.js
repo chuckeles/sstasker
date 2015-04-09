@@ -13,5 +13,6 @@ angular.module("sstasker", ["ui.router"])
 //@prepros-append toolbar.js
 
 //@prepros-append welcome.js
+//@prepros-append dashboard.js
 
 //@prepros-append router.js

@@ -10,7 +10,8 @@ angular.module("sstasker")
       })
 
       .state("dashboard", {
-        templateUrl: "html/dashboard.html"
+        templateUrl: "html/dashboard.html",
+        controller: "dashboardCtrl"
       });
 
   }]);
