@@ -20,15 +20,25 @@ public class Browser extends Region {
   public Browser() {
     getChildren().add(mBrowser);
 
-    Log.Instance().Log("Loading the index.html file");
-    mWebEngine.load(Browser.class.getResource("/chuckeles/sstasker/view/index.html").toExternalForm());
+    //mWebEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+    //  if (newValue.toString() != "SUCCEEDED")
+    //    return;
 
-    mWebEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
       JSInterface jsInterface = new JSInterface();
       JSObject window = (JSObject) mWebEngine.executeScript("window");
 
       window.setMember("java", jsInterface);
-    });
+
+      mWebEngine.executeScript(
+        "console.log = function(text) { java.log(text); };"
+      );
+      mWebEngine.executeScript(
+        "console.error = function(text) { java.log('[error]' + text); };"
+      );
+    //});
+
+    Log.Instance().Log("Loading the index.html file");
+    mWebEngine.load(Browser.class.getResource("/chuckeles/sstasker/view/index.html").toExternalForm());
   }
 
   // ------

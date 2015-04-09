@@ -6,7 +6,7 @@ package chuckeles.sstasker.system;
 public class JSInterface {
 
   public void log(String text) {
-    Log.Instance().Log(text);
+    Log.Instance().Log("[webview] " + text);
   }
 
   public void exit() {

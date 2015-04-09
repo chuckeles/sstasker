@@ -1,6 +1,8 @@
 angular.module("sstasker", ["ui.router"])
 
   .controller("mainCtrl", ["$state", function($state) {
+    console.log("AngularJS loaded, going to the welcome state");
+
     // go to welcome state
     $state.go("dashboard"); // TODO: Change back to welcome
   }]);
