@@ -62,4 +62,9 @@ public class Spaceship {
    * The list of crew members.
    */
   private ArrayList<Cosmonaut> mCrew = new ArrayList<>();
+
+  /**
+   * The spaceship's inventory.
+   */
+  private Inventory mInventory = new Inventory();
 }

@@ -4,6 +4,8 @@ import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.InventoryFullException;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * An inventory of items. It is a essentially an ArrayList, but limited in size by the constant MAX_INVENTORY_SIZE.
@@ -25,6 +27,15 @@ public class Inventory {
 
     else
       throw new InventoryFullException();
+  }
+
+  /**
+   * Get the stack list.
+   *
+   * @return Read-only list of stacks
+   */
+  public List<ItemStack> GetStacks() {
+    return Collections.unmodifiableList(mStacks);
   }
 
   // ------
