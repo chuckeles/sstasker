@@ -1,14 +1,16 @@
 package chuckeles.sstasker.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The main model of our spaceship. Singleton. Contains the list of tasks, crew members and inventory items.
  */
 public class Spaceship {
 
-  private Spaceship() {}
+  private Spaceship() {
+    mTasks.add(new Task("Opravit motor"));
+    mTasks.add(new Task("Opravit povrch"));
+  }
 
   // ------
 
@@ -29,7 +31,7 @@ public class Spaceship {
    *
    * @return The list of tasks
    */
-  public List<Task> GetTasks() {
+  public ArrayList<Task> GetTasks() {
     return mTasks;
   }
 
@@ -38,7 +40,7 @@ public class Spaceship {
    *
    * @return The list of crew members
    */
-  public List<Cosmonaut> GetCrew() {
+  public ArrayList<Cosmonaut> GetCrew() {
     return mCrew;
   }
 
@@ -52,10 +54,10 @@ public class Spaceship {
   /**
    * The list of tasks.
    */
-  private List<Task> mTasks = new ArrayList<>();
+  private ArrayList<Task> mTasks = new ArrayList<>();
 
   /**
    * The list of crew members.
    */
-  private List<Cosmonaut> mCrew = new ArrayList<>();
+  private ArrayList<Cosmonaut> mCrew = new ArrayList<>();
 }
