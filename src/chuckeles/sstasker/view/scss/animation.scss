@@ -6,6 +6,7 @@ ui-view.ng-leave {
 ui-view.ng-enter {
 	animation-delay: $animation-time;
 	animation-name: zoomIn;
+	opacity: 0;
 }
 
 ui-view.ng-leave {
@@ -15,7 +16,7 @@ ui-view.ng-leave {
 ui-view.ng-enter {
 	display: none !important;
 }
-ui-view.ng-enter:last-child {
+ui-view.ng-enter:last-of-type {
 	display: block !important;
 }
 
@@ -27,7 +28,7 @@ ui-view.ng-enter:last-child {
     transform: scale3d(.3, .3, .3);
   }
 
-  50% {
+  100% {
     opacity: 1;
   }
 }
@@ -37,12 +38,8 @@ ui-view.ng-enter:last-child {
     opacity: 1;
   }
 
-  50% {
-    opacity: 0;
-    transform: scale3d(.3, .3, .3);
-  }
-
   100% {
     opacity: 0;
+    transform: scale3d(.3, .3, .3);
   }
 }
