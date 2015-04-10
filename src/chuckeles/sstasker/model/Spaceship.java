@@ -3,14 +3,12 @@ package chuckeles.sstasker.model;
 import java.util.ArrayList;
 
 /**
- * The main model of our spaceship. Singleton. Contains the list of tasks, crew members and inventory items.
+ * The main model of the spaceship. Singleton. Contains the list of spaceship parts, tasks,
+ * crew members and inventory items.
  */
 public class Spaceship {
 
-  private Spaceship() {
-    mTasks.add(new Task("Opravit motor"));
-    mTasks.add(new Task("Opravit povrch"));
-  }
+  private Spaceship() {}
 
   // ------
 
@@ -24,6 +22,10 @@ public class Spaceship {
       mInstance = new Spaceship();
 
     return mInstance;
+  }
+
+  public void Initialize() {
+    // TODO: Write
   }
 
   /**

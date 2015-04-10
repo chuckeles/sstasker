@@ -20,4 +20,9 @@ public class Constants {
    */
   public static final int MAX_STACK_SIZE = 64;
 
+  /**
+   * Maximum number of item stacks in the inventory of the spaceship.
+   */
+  public static final int MAX_INVENTORY_SIZE = 8;
+
 }
