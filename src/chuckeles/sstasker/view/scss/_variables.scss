@@ -16,10 +16,13 @@ $transition-time: .4s;
 // --- SIZES ---
 
 $margin-sides: 0 .6em;
-$padding-small: .6em 1.4em;
+$padding-small-h: .6em;
+$padding-small-w: 1.4em;
+$padding-small: $padding-small-h $padding-small-w;
 $toolbar-height: 2.2em;
 $border-radius: 8px;
-$panel-margin: 1.5em;
+$panel-margin: 1em;
+$tasks-max-width: 10em;
 
 // --- LOADER ---
 

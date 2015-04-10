@@ -7,4 +7,24 @@
   background-color: sscolor("light");
 
   @extend .flex-auto;
+
+  & + & {
+    margin-left: 0;
+  }
+
+  .header {
+    margin: (-$padding-small-h) (-$padding-small-w);
+    margin-bottom: $panel-margin;
+    padding: $padding-small;
+
+    background-color: sscolor("primary");
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+
+    @for $i from 1 through 6 {
+      h#{$i} {
+        margin: 0;
+      }
+    }
+  }
 }
