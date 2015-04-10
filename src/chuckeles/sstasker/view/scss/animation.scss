@@ -14,10 +14,14 @@ ui-view.ng-leave {
 }
 
 ui-view.ng-enter {
-	display: none !important;
+	display: none;
 }
 ui-view.ng-enter:last-of-type {
-	display: block !important;
+	display: block;
+
+	&.flex {
+		display: flex;
+	}
 }
 
 @keyframes zoomIn {

@@ -27,13 +27,13 @@ public class Browser extends Region {
       JSInterface jsInterface = new JSInterface();
       JSObject window = (JSObject) mWebEngine.executeScript("window");
 
-      window.setMember("java", jsInterface);
+      window.setMember("$java", jsInterface);
 
       mWebEngine.executeScript(
-        "console.log = function(text) { java.log(text); };"
+        "console.log = function(text) { $java.Log(text); };"
       );
       mWebEngine.executeScript(
-        "console.error = function(text) { java.log('[error] ' + text); };"
+        "console.error = function(text) { $java.Log('[error] ' + text); };"
       );
     //});
 
