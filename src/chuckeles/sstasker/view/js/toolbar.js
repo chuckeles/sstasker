@@ -6,7 +6,7 @@ angular.module("sstasker")
         console.log("Requesting an exit");
         window.$java.Exit();
       } else
-        console.log("No java object...");
+        console.log("No $java object!");
     }
   }])
 
