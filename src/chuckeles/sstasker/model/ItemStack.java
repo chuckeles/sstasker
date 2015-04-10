@@ -2,6 +2,8 @@ package chuckeles.sstasker.model;
 
 /**
  * A stack of items. That is more items of the same type that only take one inventory slot.
+ *
+ * @see Item
  */
 public class ItemStack {
 
@@ -9,7 +11,6 @@ public class ItemStack {
    * Create new stack of items. Will contain only one item.
    *
    * @param item Stack item
-   * @see Item
    */
   public ItemStack(Item item) {
     this(item, 1);
@@ -20,7 +21,6 @@ public class ItemStack {
    *
    * @param item Stack item
    * @param number Number of items
-   * @see Item
    */
   public ItemStack(Item item, int number) {
     mItem = item;

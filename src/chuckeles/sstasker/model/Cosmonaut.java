@@ -1,7 +1,9 @@
 package chuckeles.sstasker.model;
 
 /**
- * Contains information about a crew member.
+ * A spaceship crew member. Has a name. This is a base class for more specialized crew members, e. g. an engineer.
+ *
+ * @see Spaceship
  */
 // TODO: Mark abstract
 public class Cosmonaut {
@@ -29,7 +31,7 @@ public class Cosmonaut {
   // ------
 
   /**
-   * Name of the cosmonaut.
+   * The name of the cosmonaut.
    */
   private String mName;
 

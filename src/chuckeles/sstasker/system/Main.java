@@ -4,14 +4,17 @@ import chuckeles.sstasker.model.Spaceship;
 import javafx.application.Application;
 
 /**
- * This class contains the main method.
+ * This class contains just the main method.
  */
 public class Main {
 
   /**
-   * Application entry point.
+   * Application entry point. Initializes the log, spaceship and launches the application.
    *
    * @param args Console arguments
+   * @see Log
+   * @see Spaceship
+   * @see Window
    */
   public static void main(String[] args) {
 

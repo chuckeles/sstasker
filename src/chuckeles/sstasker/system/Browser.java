@@ -44,7 +44,7 @@ public class Browser extends Region {
   // ------
 
   /**
-   * Keeps the webview the full size of the window, every time.
+   * Keeps the webview the full size of the window, all the time.
    */
   @Override
   protected void layoutChildren() {

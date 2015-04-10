@@ -6,7 +6,7 @@ import chuckeles.sstasker.model.Task;
 import java.util.ArrayList;
 
 /**
- * Java - Javascript interface
+ * Bridge between Java and Javascript.
  */
 public class JSInterface {
 
@@ -14,6 +14,7 @@ public class JSInterface {
    * Log the text.
    *
    * @param text Text to load
+   * @see Log
    */
   public void Log(String text) {
     Log.Instance().Log("[webview] " + text);

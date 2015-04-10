@@ -3,7 +3,9 @@ package chuckeles.sstasker.model;
 import chuckeles.sstasker.system.Constants;
 
 /**
- * Contains information about an item in spaceship's inventory.
+ * An item, usually contained in a stack in the spaceship's inventory.
+ *
+ * @see Inventory
  */
 public class Item {
 

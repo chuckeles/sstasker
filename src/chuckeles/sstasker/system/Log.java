@@ -6,11 +6,8 @@ import java.util.Date;
 /**
  * Writes messages to console and the log file. Singleton.
  */
+// TODO: Add support for the log file
 public class Log {
-
-  private Log() {}
-
-  // ------
 
   /**
    * Get the singleton instance.
@@ -28,6 +25,8 @@ public class Log {
    * Shortcut for WriteTime and WriteLn.
    *
    * @param text String to log
+   * @see #WriteTime()
+   * @see #WriteLn(String)
    */
   public Log Log(String text) {
     WriteTime().WriteLn(text);
@@ -68,7 +67,9 @@ public class Log {
   }
 
   /**
-   * Log current system time.
+   * Log current system time. Writes it in this format: "[h:m:s] ". Uses new Date.
+   *
+   * @see Date
    */
   public Log WriteTime() {
     Date currentTime = new Date();

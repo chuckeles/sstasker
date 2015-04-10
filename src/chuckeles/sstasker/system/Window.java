@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * The SSTasker Application.
+ * The SSTasker window mainly for displaying the webview.
  */
 public class Window extends Application {
 
@@ -13,6 +13,7 @@ public class Window extends Application {
    * Start the SSTasker application.
    *
    * @param primaryStage Main stage
+   * @see Browser
    */
   @Override
   public void start(Stage primaryStage) throws Exception {
