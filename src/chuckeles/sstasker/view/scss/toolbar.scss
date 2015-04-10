@@ -26,8 +26,23 @@
     margin-left: auto;
   }
 
-  .ng-enter &,
+  .ng-enter & {
+    animation: toolbarIn $animation-time ($animation-time * 2);
+  }
+
   .ng-leave & {
-    display: none;
+    animation: toolbarOut ($animation-time / 2);
+  }
+}
+
+@keyframes toolbarIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes toolbarOut {
+  to {
+    opacity: 0;
   }
 }

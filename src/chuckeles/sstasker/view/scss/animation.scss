@@ -20,12 +20,10 @@ ui-view.ng-enter:last-of-type {
 	display: block !important;
 }
 
-// http://daneden.github.io/animate.css/
-
 @keyframes zoomIn {
   0% {
     opacity: 0;
-    transform: scale3d(.3, .3, .3);
+    transform: scale(.5);
   }
 
   100% {
@@ -40,6 +38,6 @@ ui-view.ng-enter:last-of-type {
 
   100% {
     opacity: 0;
-    transform: scale3d(.3, .3, .3);
+    transform: scale(.5);
   }
 }
