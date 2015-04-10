@@ -1,3 +1,7 @@
+//@prepros-prepend angular.js
+//@prepros-prepend angular-animate.js
+//@prepros-prepend angular-ui-router.js
+
 angular.module("sstasker", ["ngAnimate", "ui.router"])
 
   .controller("mainCtrl", ["$state", function($state) {
