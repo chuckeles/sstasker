@@ -1,0 +1,10 @@
+.panel {
+  margin: $panel-margin;
+  padding: $padding-small;
+
+  color: sscolor("dark");
+  border-radius: $border-radius;
+  background-color: sscolor("light");
+
+  @extend .flex-auto;
+}

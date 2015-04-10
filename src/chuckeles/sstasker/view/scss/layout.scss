@@ -19,4 +19,10 @@
     flex: auto;
   }
 
+  @for $i from 1 through 8 {
+    &-#{$i} {
+      flex: $i;
+    }
+  }
+
 }
