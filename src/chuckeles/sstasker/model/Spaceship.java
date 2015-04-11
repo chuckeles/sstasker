@@ -75,18 +75,24 @@ public class Spaceship {
   private void InitRandomNew() {
     Log.Instance().Log("Initializing a new random spaceship");
 
-    // add parts
-    Log.Instance().Log("Adding parts to spaceship");
-    mParts.add(new Generator());
-    mParts.add(new OxygenGenerator());
-    Log.Instance().Log("Parts added:" + mParts.toString());
+    // TODO: Remove
+    // add tasks
+    Log.Instance().Log("Adding the maintanance task");
+    mTasks.add(new Task("Udržovanie Vesmírnej Lodi"));
 
+    // add crew
     Log.Instance().Log("Adding crew");
     mCrew.add(new Engineer("Patričko"));
     mCrew.add(new Engineer("Džejky"));
     mCrew.add(new Engineer("Domčo"));
     mCrew.add(new Engineer("Pišta"));
     Log.Instance().Log("Crew added: " + mCrew.toString());
+
+    // add parts
+    Log.Instance().Log("Adding parts to spaceship");
+    mParts.add(new Generator());
+    mParts.add(new OxygenGenerator());
+    Log.Instance().Log("Parts added:" + mParts.toString());
   }
 
   //region Getters
