@@ -5,13 +5,18 @@ angular.module("sstasker")
 
     $scope.viewClass = "dashboard full flex";
 
-    console.log("Requesting the task list");
+    console.log("Requesting the spaceship lists");
     if (window.$java) {
       $scope.taskList = window.$java.GetTaskList();
-      console.log("Got: " + $scope.taskList);
+      $scope.crewList = window.$java.GetCrewList();
+      $scope.partList = window.$java.GetPartList();
+      console.log("Parts: " + $scope.partList);
     }
     else {
       $scope.taskList = [];
+      $scope.crewList = [];
+      $scope.partList = [];
       console.log("No $java object!");
     }
+
   }])

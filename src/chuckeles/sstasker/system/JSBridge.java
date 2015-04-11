@@ -1,9 +1,7 @@
 package chuckeles.sstasker.system;
 
 import chuckeles.sstasker.model.Spaceship;
-import chuckeles.sstasker.model.Task;
-
-import java.util.ArrayList;
+import netscape.javascript.JSObject;
 
 /**
  * Bridge between Java and Javascript.
@@ -41,8 +39,26 @@ public class JSBridge {
    *
    * @return Task list
    */
-  public ArrayList<Task> GetTaskList() {
-    return Spaceship.Instance().GetTasks();
+  public JSObject[] GetTaskList() {
+    return (JSObject[])Spaceship.Instance().GetTasks().toArray();
+  }
+
+  /**
+   * Get the list of crew members.
+   *
+   * @return Crew list
+   */
+  public JSObject[] GetCrewList() {
+    return (JSObject[])Spaceship.Instance().GetCrew().toArray();
+  }
+
+  /**
+   * Get the list of parts.
+   *
+   * @return Part list
+   */
+  public JSObject[] GetPartList() {
+    return (JSObject[])Spaceship.Instance().GetParts().toArray();
   }
 
   //endregion
