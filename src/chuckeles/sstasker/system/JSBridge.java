@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Bridge between Java and Javascript.
  */
-public class JSInterface {
+public class JSBridge {
 
   //region Methods
 

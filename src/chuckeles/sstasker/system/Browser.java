@@ -26,10 +26,10 @@ public class Browser extends Region {
     //  if (newValue.toString() != "SUCCEEDED")
     //    return;
 
-      JSInterface jsInterface = new JSInterface();
+      JSBridge jsBridge = new JSBridge();
       JSObject window = (JSObject) mWebEngine.executeScript("window");
 
-      window.setMember("$java", jsInterface);
+      window.setMember("$java", jsBridge);
 
       mWebEngine.executeScript(
         "console.log = function(text) { $java.Log(text); };"
