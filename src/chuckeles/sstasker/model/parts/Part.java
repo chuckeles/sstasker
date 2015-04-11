@@ -4,7 +4,7 @@ package chuckeles.sstasker.model.parts;
  * Spaceship part, e. g. and engine, a console, and oxygen generator... Has a reliability, health
  * and whether it is currently functional or not.
  */
-public interface SpaceshipPart {
+public interface Part {
 
   // region Methods
 
