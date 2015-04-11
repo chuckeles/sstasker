@@ -9,6 +9,8 @@ import chuckeles.sstasker.system.Constants;
  */
 public class Item {
 
+  //region Constructor
+
   /**
    * Create new item.
    *
@@ -18,7 +20,13 @@ public class Item {
     mName = name;
   }
 
+  //endregion
+
   // ------
+
+  //region Methods
+
+  //region Getters
 
   /**
    * Get the item's name.
@@ -38,11 +46,19 @@ public class Item {
     return Constants.MAX_STACK_SIZE;
   }
 
+  //endregion
+
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * The name of the item.
    */
   private String mName;
+
+  //endregion
 
 }

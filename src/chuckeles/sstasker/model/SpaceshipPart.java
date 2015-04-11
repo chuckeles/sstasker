@@ -6,10 +6,14 @@ package chuckeles.sstasker.model;
  */
 public interface SpaceshipPart {
 
+  // region Methods
+
   /**
    * Update the spaceship part. There's a chance the part will break.
    */
   void Update();
+
+  // region Getters
 
   /**
    * Get the reliability of the part, that is the chance that the part will not break.
@@ -32,5 +36,9 @@ public interface SpaceshipPart {
    * @return True if the part is functional, false if broken
    */
   boolean IsFunctional();
+
+  // endregion
+
+  // endregion
 
 }

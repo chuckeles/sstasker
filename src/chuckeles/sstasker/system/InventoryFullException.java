@@ -9,8 +9,12 @@ import chuckeles.sstasker.model.Inventory;
  */
 public class InventoryFullException extends Exception {
 
+  //region Constructor
+
   public InventoryFullException() {
     super("Inventory is full");
   }
+
+  //endregion
 
 }

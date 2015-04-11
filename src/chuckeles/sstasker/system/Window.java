@@ -9,6 +9,8 @@ import javafx.stage.Stage;
  */
 public class Window extends Application {
 
+  //region Methods
+
   /**
    * Start the SSTasker application.
    *
@@ -36,7 +38,11 @@ public class Window extends Application {
 
   }
 
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * Application's main stage.
@@ -47,5 +53,7 @@ public class Window extends Application {
    * My webview component.
    */
   private Browser mBrowser = new Browser();
+
+  //endregion
 
 }

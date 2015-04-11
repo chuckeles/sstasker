@@ -8,6 +8,8 @@ package chuckeles.sstasker.model;
 // TODO: Mark abstract
 public class Cosmonaut {
 
+  //region Constructor
+
   /**
    * Create new cosmonaut.
    *
@@ -17,7 +19,13 @@ public class Cosmonaut {
     mName = name;
   }
 
+  //endregion
+
   // ------
+
+  //region Methods
+
+  //region Getters
 
   /**
    * Get the name of the cosmonaut.
@@ -28,11 +36,19 @@ public class Cosmonaut {
     return mName;
   }
 
+  //endregion
+
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * The name of the cosmonaut.
    */
   private String mName;
+
+  //endregion
 
 }

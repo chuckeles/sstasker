@@ -5,6 +5,8 @@ package chuckeles.sstasker.model;
  */
 public class Task {
 
+  //region Constructor
+
   /**
    * Create a task with default title.
    */
@@ -19,7 +21,11 @@ public class Task {
     mTitle = title;
   }
 
+  //endregion
+
   // ------
+
+  //region Methods
 
   /**
    * Set task's description.
@@ -39,6 +45,8 @@ public class Task {
     mTitle = title;
   }
 
+  //region Getters
+
   /**
    * Get task's description.
    *
@@ -57,7 +65,13 @@ public class Task {
     return mTitle;
   }
 
+  //endregion
+
+  //endregion
+
   // ------
+
+  //region Fields
 
   // TODO: Maybe change to JavaFX properties
   // http://code.makery.ch/library/javafx-8-tutorial/part2/
@@ -71,5 +85,7 @@ public class Task {
    * The description of the task.
    */
   String mDescription = "";
+
+  //endregion
 
 }

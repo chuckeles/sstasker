@@ -10,6 +10,8 @@ import java.util.ArrayList;
  */
 public class JSInterface {
 
+  //region Methods
+
   /**
    * Log the text.
    *
@@ -35,5 +37,7 @@ public class JSInterface {
   public ArrayList<Task> GetTaskList() {
     return Spaceship.Instance().GetTasks();
   }
+
+  //endregion
 
 }

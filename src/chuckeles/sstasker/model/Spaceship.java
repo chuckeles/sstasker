@@ -10,6 +10,8 @@ import java.util.ArrayList;
  */
 public class Spaceship {
 
+  //region Methods
+
   /**
    * Get singleton instance.
    *
@@ -48,6 +50,8 @@ public class Spaceship {
     Log.Instance().Log("Initializing a new random spaceship");
   }
 
+  //region Getters
+
   /**
    * Get the list of tasks.
    *
@@ -66,7 +70,13 @@ public class Spaceship {
     return mCrew;
   }
 
+  //endregion
+
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * The singleton instance.
@@ -87,4 +97,6 @@ public class Spaceship {
    * The spaceship's inventory.
    */
   private Inventory mInventory = new Inventory();
+
+  //endregion
 }

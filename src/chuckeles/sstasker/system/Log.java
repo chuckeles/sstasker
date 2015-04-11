@@ -9,6 +9,8 @@ import java.util.Date;
 // TODO: Add support for the log file
 public class Log {
 
+  //region Methods
+
   /**
    * Get the singleton instance.
    *
@@ -80,11 +82,17 @@ public class Log {
     return this;
   }
 
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * Singleton instance.
    */
   private static Log mInstance;
+
+  //endregion
 
 }

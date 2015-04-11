@@ -9,6 +9,8 @@ import chuckeles.sstasker.system.Constants;
  */
 public class HeavyItem extends Item {
 
+  //region Constructor
+
   /**
    * Create new heavy item.
    *
@@ -18,7 +20,13 @@ public class HeavyItem extends Item {
     super(name);
   }
 
+  //endregion
+
   // ------
+
+  //region Methods
+
+  //region Getters
 
   /**
    * Get the max size of a stack of this item.
@@ -29,4 +37,8 @@ public class HeavyItem extends Item {
   public int GetMaxStackSize() {
     return Constants.MAX_HEAVY_STACK_SIZE;
   }
+
+  //endregion
+
+  //endregion
 }

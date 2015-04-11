@@ -5,6 +5,8 @@ package chuckeles.sstasker.system;
  */
 public class Constants {
 
+  //region Fields
+
   /**
    * Window minimum width.
    */
@@ -29,5 +31,7 @@ public class Constants {
    * Maximum number of item stacks in the inventory of the spaceship.
    */
   public static final int MAX_INVENTORY_SIZE = 8;
+
+  //endregion
 
 }

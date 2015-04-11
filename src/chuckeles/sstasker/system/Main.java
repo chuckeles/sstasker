@@ -8,6 +8,8 @@ import javafx.application.Application;
  */
 public class Main {
 
+  //region Methods
+
   /**
    * Application entry point. Initializes the log, spaceship and launches the application.
    *
@@ -31,5 +33,7 @@ public class Main {
     Log.Instance().Log("SSTasker is ending");
 
   }
+
+  //endregion
 
 }

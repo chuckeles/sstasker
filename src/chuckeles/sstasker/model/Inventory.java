@@ -15,6 +15,8 @@ import java.util.List;
  */
 public class Inventory {
 
+  //region Methods
+
   /**
    * Add new item stack to the inventory.
    *
@@ -29,6 +31,8 @@ public class Inventory {
       throw new InventoryFullException();
   }
 
+  //region Getters
+
   /**
    * Get the stack list.
    *
@@ -38,11 +42,19 @@ public class Inventory {
     return Collections.unmodifiableList(mStacks);
   }
 
+  //endregion
+
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * The list of stacks.
    */
   private ArrayList<ItemStack> mStacks = new ArrayList<>();
+
+  //endregion
 
 }

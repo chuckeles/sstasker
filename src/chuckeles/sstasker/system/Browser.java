@@ -14,6 +14,8 @@ import netscape.javascript.JSObject;
  */
 public class Browser extends Region {
 
+  //region Constructor
+
   /**
    * Create new browser.
    */
@@ -41,7 +43,11 @@ public class Browser extends Region {
     mWebEngine.load(Browser.class.getResource("/chuckeles/sstasker/view/index.html").toExternalForm());
   }
 
+  //endregion
+
   // ------
+
+  //region Methods
 
   /**
    * Keeps the webview the full size of the window, all the time.
@@ -53,7 +59,11 @@ public class Browser extends Region {
     layoutInArea(mBrowser, 0, 0, getWidth(), getHeight(), 0, HPos.CENTER, VPos.CENTER);
   }
 
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * The JavaFX webview component.
@@ -64,5 +74,7 @@ public class Browser extends Region {
    * The webview engine.
    */
   private final WebEngine mWebEngine = mBrowser.getEngine();
+
+  //endregion
 
 }

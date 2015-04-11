@@ -7,6 +7,8 @@ package chuckeles.sstasker.model;
  */
 public class ItemStack {
 
+  //region Constructor
+
   /**
    * Create new stack of items. Will contain only one item.
    *
@@ -27,7 +29,11 @@ public class ItemStack {
     mNumber = number;
   }
 
+  //endregion
+
   // ------
+
+  //region Fields
 
   /**
    * The item of this stack.
@@ -38,4 +44,7 @@ public class ItemStack {
    * The number of items in this stack.
    */
   private int mNumber;
+
+  //endregion
+
 }
