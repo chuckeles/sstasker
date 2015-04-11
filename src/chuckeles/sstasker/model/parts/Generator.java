@@ -14,6 +14,12 @@ public class Generator extends PartWithHealth {
 
   @Override
   public void Update() {
+    if (!IsFunctional()) {
+      Log.Instance().Log("Generator updated but it is broken," +
+          " energy: " + (int)(mEnergy / mMaxEnergy * 100) + "%");
+      return;
+    }
+
     super.Update();
 
     // decrease reliability

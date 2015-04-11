@@ -1,7 +1,10 @@
 package chuckeles.sstasker.model.parts;
 
+import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.Log;
+
+import java.util.List;
 
 /**
  * Generates oxygen on the spaceship. It is unaffected by it's health and produces a constant supply of oxygen.
@@ -14,11 +17,30 @@ public class OxygenGenerator extends PartWithoutHealth {
 
   @Override
   public void Update() {
+    if (!IsFunctional()) {
+      Log.Instance().Log("Oxygen generator updated but it is broken");
+      return;
+    }
+
     // decrease reliability
     mReliability *= 0.99;
 
-    // generate energy
-    mOxygen = Math.min(mMaxOxygen, mOxygen + mGeneration);
+    // get required energy
+    final double[] energy = {0.0}; // why can't a normal variable be used in a lambda???
+                                   // anyway, IntelliJ Idea suggested this, so... it works
+    List<Part> parts = Spaceship.Instance().GetParts();
+    parts.forEach(part -> {
+      // is generator?
+      if (part instanceof Generator) {
+        Generator generator = (Generator)part;
+
+        // get energy
+        energy[0] += generator.SubstractEnergy(mConsumption - energy[0]);
+      }
+    });
+
+    // generate oxygen
+    mOxygen = Math.min(mMaxOxygen, mOxygen + mGeneration * energy[0] / mConsumption);
 
     // break apart horribly
     if (Math.random() > mReliability / Constants.MAX_PART_RELIABILITY)
@@ -103,6 +125,11 @@ public class OxygenGenerator extends PartWithoutHealth {
    * Generation base level.
    */
   private double mGeneration = 120.0;
+
+  /**
+   * How much energy the generator requires to function.
+   */
+  private double mConsumption = 20.0;
 
   //endregion
 
