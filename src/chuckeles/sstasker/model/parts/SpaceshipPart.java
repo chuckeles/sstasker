@@ -1,4 +1,4 @@
-package chuckeles.sstasker.model;
+package chuckeles.sstasker.model.parts;
 
 /**
  * Spaceship part, e. g. and engine, a console, and oxygen generator... Has a reliability, health
