@@ -1,5 +1,7 @@
 package chuckeles.sstasker.model;
 
+import chuckeles.sstasker.system.Log;
+
 import java.util.ArrayList;
 
 /**
@@ -25,9 +27,25 @@ public class Spaceship {
    */
   // TODO: Maybe move to constructor
   public void Initialize() {
-    mTasks.add(new Task("Hello"));
+    if (!Load())
+        InitRandomNew();
+  }
 
+  /**
+   * Load the spaceship from the disk. Returns true if successful or false if the file doesn't exist.
+   *
+   * @return True if successfully loaded, false otherwise
+   */
+  public boolean Load() {
     // TODO: Write
+    return false;
+  }
+
+  /**
+   * Initialize random new spaceship. That means generate random list of parts, crew members and inventory items.
+   */
+  private void InitRandomNew() {
+    Log.Instance().Log("Initializing a new random spaceship");
   }
 
   /**
