@@ -1,0 +1,4 @@
+.dashboard {
+  margin-top: $toolbar-height;
+  height: calc(100% - #{$toolbar-height});
+}

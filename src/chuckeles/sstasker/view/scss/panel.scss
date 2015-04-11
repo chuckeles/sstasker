@@ -1,0 +1,48 @@
+.panel {
+  margin: $panel-margin;
+  padding: $padding-small;
+
+  color: sscolor("dark");
+  border-radius: $border-radius;
+  background-color: sscolor("light");
+
+  @extend .flex-auto;
+
+  & + & {
+    margin-left: 0;
+  }
+
+  &.small {
+    max-width: $panel-small-max-width;
+  }
+
+  .header {
+    margin: (-$padding-small-h) (-$padding-small-w);
+    margin-bottom: $panel-margin;
+    padding: $padding-small;
+
+    background-color: sscolor("primary");
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+
+    @for $i from 1 through 6 {
+      h#{$i} {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.panel-group {
+  .panel + .panel {
+    margin-left: $panel-margin;
+    margin-top: 0;
+  }
+
+  .panel + &,
+  & + .panel {
+    .panel {
+      margin-left: 0;
+    }
+  }
+}

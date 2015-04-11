@@ -1,0 +1,45 @@
+<toolbar></toolbar>
+
+<div class="panel small">
+  <div class="header">
+    <h3>Úlohy</h3>
+  </div>
+
+  <ul class="unstyled">
+    <li ng-repeat="task in tasks">
+      {{ task.title }}
+    </li>
+  </ul>
+</div>
+
+<div class="panel">
+  <div class="header">
+    <h3>Detaily</h3>
+  </div>
+</div>
+
+<div class="panel-group flex column">
+  <div class="panel small flex-auto">
+    <div class="header">
+      <h3>Posádka</h3>
+    </div>
+
+    <ul class="unstyled">
+      <li ng-repeat="member in crew">
+        {{ member.name }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="panel small flex-auto">
+    <div class="header">
+      <h3>Časti</h3>
+    </div>
+
+    <ul class="unstyled">
+      <li ng-repeat="part in parts">
+        {{ part.name }}
+      </li>
+    </ul>
+  </div>
+</div>

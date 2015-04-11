@@ -1,0 +1,76 @@
+.button {
+  padding: $padding-small;
+
+  transition: background-color $transition-time;
+
+  color: sscolor("dark", 4);
+  border: 1px solid sscolor("dark", 6);
+  background-color: sscolor("light", 8);
+
+  border-radius: $border-radius;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    outline: none;
+    background-color: sscolor("light", 4);
+  }
+
+  &:active,
+  &.active {
+    box-shadow: $button-press-shadow;
+  }
+
+  &.raw {
+    display: inline-block;
+
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    @extend a;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &.primary {
+    background-color: sscolor("primary");
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: sscolor("primary", -1);
+    }
+  }
+
+  &.secondary {
+    background-color: sscolor("secondary");
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: sscolor("secondary", -1);
+    }
+  }
+
+  &.accent {
+    background-color: sscolor("accent");
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: sscolor("accent", -1);
+    }
+  }
+}

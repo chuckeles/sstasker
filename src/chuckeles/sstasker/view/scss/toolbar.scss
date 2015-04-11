@@ -1,0 +1,49 @@
+.toolbar {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  padding: $padding-small;
+
+  color: sscolor("dark");
+  background-color: sscolor("light");
+
+  .button {
+    color: sscolor("dark");
+    margin: $margin-sides;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .right {
+    margin-left: auto;
+  }
+
+  .ng-enter & {
+    animation: toolbarIn $animation-time ($animation-time * 2);
+  }
+
+  .ng-leave & {
+    animation: toolbarOut ($animation-time / 2);
+  }
+}
+
+@keyframes toolbarIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes toolbarOut {
+  to {
+    opacity: 0;
+  }
+}

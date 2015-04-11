@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="sk">
+
+<!-- HEAD -->
+<head>
+
+  <!-- META -->
+  <title>SSTasker</title>
+  <meta charset="UTF-8">
+
+  <!-- LINKS -->
+  <link rel="stylesheet" href="build/css/style.min.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+</head>
+
+<!-- BODY -->
+<body class="flex center" ng-app="sstasker" ng-controller="mainCtrl">
+
+  <ui-view class="{{ viewClass }}">
+
+    <div class="loader">
+      <div class="bounce delay-1"></div>
+      <div class="bounce delay-2"></div>
+      <div class="bounce delay-3"></div>
+    </div>
+
+  </ui-view>
+
+  <!-- SCRIPTS -->
+  <script src="build/js/script.min.js"></script>
+
+</body>
+
+</html>

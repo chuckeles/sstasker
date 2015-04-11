@@ -1,0 +1,26 @@
+// http://app.coolors.co/1b2021-fffd98-bde4a7-b3d2b2-e9e9e9
+
+$sscolors: (
+  "primary"   : #fffd98,
+  "secondary" : #bde4a7,
+  "accent"    : #b3d2b2,
+
+  "light"     : #e9e9e9,
+  "dark"      : #1b2021
+);
+
+// https://scotch.io/tutorials/aesthetic-sass-2-colors?utm_content=buffer199e2&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+$color-interval: 10% !global;
+
+@function sscolor($name: "primary", $level: 0) {
+  $color: map-get($sscolors, $name);
+  $color-base: if($level < 0, black, white);
+
+  @if not($color) {
+    @warn "unknown color: #{$name}";
+    $color: map-get($sscolors, "primary");
+  }
+
+  @return mix($color-base, $color, abs($level) * $color-interval);
+}

@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family;
+  font-size: $font-size;
+
+  height: 100%;
+
+  color: sscolor("light");
+  background-color: sscolor("dark");
+}
+
+body {
+  position: relative;
+
+  height: 100%;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    text-align: center;
+  }
+}
+
+a {
+  transition: color $transition-time;
+  text-decoration: none;
+
+  color: sscolor("primary");
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: sscolor("primary", -1);
+  }
+}
+
+ul,
+ol {
+  &.unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
+}
