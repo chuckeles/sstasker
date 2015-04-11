@@ -27,7 +27,7 @@ public class OxygenGenerator extends PartWithoutHealth {
     mReliability *= 0.99;
 
     // get required energy
-    final Holder<Double> energy = new Holder(0.0);
+    final Holder<Double> energy = new Holder<>(0.0);
     List<Part> parts = Spaceship.Instance().GetParts();
     parts.forEach(part -> {
       // is generator?
