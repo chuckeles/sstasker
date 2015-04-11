@@ -1,6 +1,7 @@
 package chuckeles.sstasker.model.parts;
 
 import chuckeles.sstasker.system.Constants;
+import chuckeles.sstasker.system.Log;
 
 /**
  * Generates oxygen on the spaceship. It is unaffected by it's health and produces a constant supply of oxygen.
@@ -14,14 +15,19 @@ public class OxygenGenerator extends PartWithoutHealth {
   @Override
   public void Update() {
     // decrease reliability
-    mReliability *= 0.8;
+    mReliability *= 0.99;
 
     // generate energy
-    mOxygen = Math.max(mMaxOxygen, mOxygen + mGeneration);
+    mOxygen = Math.min(mMaxOxygen, mOxygen + mGeneration);
 
     // break apart horribly
     if (Math.random() > mReliability / Constants.MAX_PART_RELIABILITY)
       Break();
+
+    Log.Instance().Log("Oxygen generator updated," +
+        " reliability: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
+        ", oxygen: " + (int)(mOxygen / mMaxOxygen * 100) + "%" +
+        ", works: " + mWorks);
   }
 
   @Override

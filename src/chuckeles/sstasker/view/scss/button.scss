@@ -40,4 +40,37 @@
       box-shadow: none;
     }
   }
+
+  &.primary {
+    background-color: sscolor("primary");
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: sscolor("primary", -1);
+    }
+  }
+
+  &.secondary {
+    background-color: sscolor("secondary");
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: sscolor("secondary", -1);
+    }
+  }
+
+  &.accent {
+    background-color: sscolor("accent");
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: sscolor("accent", -1);
+    }
+  }
 }

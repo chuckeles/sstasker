@@ -1,6 +1,7 @@
 package chuckeles.sstasker.model.parts;
 
 import chuckeles.sstasker.system.Constants;
+import chuckeles.sstasker.system.Log;
 
 /**
  * Power generator. Provides power for the spaceship. Produces infinite amount of power as long as it is functional.
@@ -16,14 +17,19 @@ public class Generator extends PartWithHealth {
     super.Update();
 
     // decrease reliability
-    mReliability *= 0.94;
+    mReliability *= 0.99;
 
     // generate energy
-    mEnergy = Math.max(mMaxEnergy, mEnergy + mGeneration * GetHealth() / Constants.MAX_PART_HEALTH);
+    mEnergy = Math.min(mMaxEnergy, mEnergy + mGeneration * GetHealth() / Constants.MAX_PART_HEALTH);
 
     // break apart horribly
     if (Math.random() > mReliability / Constants.MAX_PART_RELIABILITY)
       Break();
+
+    Log.Instance().Log("Generator updated," +
+        " reliability: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
+        ", energy: " + (int)(mEnergy / mMaxEnergy * 100) + "%" +
+        ", works: " + mWorks);
   }
 
   @Override

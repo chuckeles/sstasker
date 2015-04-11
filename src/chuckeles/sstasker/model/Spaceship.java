@@ -42,6 +42,7 @@ public class Spaceship {
    * Update everything on the spaceship.
    */
   public void Update() {
+    Log.Instance().Log("Updating the spaceship");
     mParts.forEach(part -> part.Update());
     mCrew.forEach(cosmonaut -> cosmonaut.Update());
     // TODO: Update tasks

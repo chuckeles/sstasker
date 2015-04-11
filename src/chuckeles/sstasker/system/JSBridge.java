@@ -23,6 +23,13 @@ public class JSBridge {
   }
 
   /**
+   * Update the spaceship.
+   */
+  public void Update() {
+    Spaceship.Instance().Update();
+  }
+
+  /**
    * Exit the application.
    */
   public void Exit() {
