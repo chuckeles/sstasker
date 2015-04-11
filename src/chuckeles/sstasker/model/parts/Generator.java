@@ -14,7 +14,7 @@ public class Generator extends PartWithHealth {
 
   @Override
   public void Update() {
-    if (!IsFunctional()) {
+    if (!Works()) {
       Log.Instance().Log("Generator updated but it is broken," +
           " energy: " + (int)(mEnergy / mMaxEnergy * 100) + "%");
       return;
@@ -69,7 +69,7 @@ public class Generator extends PartWithHealth {
   }
 
   @Override
-  public boolean IsFunctional() {
+  public boolean Works() {
     return mWorks;
   }
 

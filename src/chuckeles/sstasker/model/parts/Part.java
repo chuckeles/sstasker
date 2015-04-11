@@ -45,7 +45,7 @@ public interface Part {
    *
    * @return True if the part is functional, false if broken
    */
-  boolean IsFunctional();
+  boolean Works();
 
   // endregion
 

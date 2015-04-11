@@ -18,7 +18,7 @@ public class OxygenGenerator extends PartWithoutHealth {
 
   @Override
   public void Update() {
-    if (!IsFunctional()) {
+    if (!Works()) {
       Log.Instance().Log("Oxygen generator updated but it is broken");
       return;
     }
@@ -87,7 +87,7 @@ public class OxygenGenerator extends PartWithoutHealth {
   }
 
   @Override
-  public boolean IsFunctional() {
+  public boolean Works() {
     return mWorks;
   }
 
