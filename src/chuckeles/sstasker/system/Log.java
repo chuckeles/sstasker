@@ -1,6 +1,5 @@
 package chuckeles.sstasker.system;
 
-import java.lang.System;
 import java.util.Date;
 
 /**
