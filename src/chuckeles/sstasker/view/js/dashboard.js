@@ -7,8 +7,8 @@ angular.module("sstasker")
 
     console.log("Requesting the spaceship lists");
     if (window.$java) {
-      $scope.taskList = window.$java.GetTaskList();
-      $scope.crewList = window.$java.GetCrewList();
+      // $scope.taskList = window.$java.GetTaskList();
+      // $scope.crewList = window.$java.GetCrewList();
       $scope.partList = window.$java.GetPartList();
       console.log("Parts: " + $scope.partList);
     }
