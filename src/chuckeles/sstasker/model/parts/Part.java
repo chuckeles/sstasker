@@ -1,5 +1,7 @@
 package chuckeles.sstasker.model.parts;
 
+import chuckeles.sstasker.model.crew.Cosmonaut;
+
 /**
  * Spaceship part, e. g. and engine, a console, and oxygen generator... Has a reliability, health
  * and whether it is currently functional or not.
@@ -17,6 +19,15 @@ public interface Part {
    * Repair the part, restoring it to functional state.
    */
   void Repair();
+
+  /**
+   * Get repaired by a cosmonaut. Visitor pattern.
+   * https://sourcemaking.com/design_patterns/visitor
+   *
+   * @param cosmonaut The cosmonaut to repair the part
+   * @see Cosmonaut
+   */
+  void GetRepaired(Cosmonaut cosmonaut);
 
   /**
    * Break the part, making it non-functional.

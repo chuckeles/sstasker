@@ -55,7 +55,7 @@ public class Spaceship {
       if (!part.Works())
         mCrew.forEach(cosmonaut -> {
           if (!part.Works())
-            cosmonaut.Repair(part);
+            part.GetRepaired(cosmonaut);
         });
     });
   }
@@ -102,7 +102,7 @@ public class Spaceship {
     Log.Instance().Log("Adding parts to spaceship");
     mParts.add(new Generator());
     mParts.add(new OxygenGenerator());
-    Log.Instance().Log("Parts added:" + mParts.toString());
+    Log.Instance().Log("Parts added: " + mParts.toString());
   }
 
   //region Getters

@@ -1,6 +1,7 @@
 package chuckeles.sstasker.model.parts;
 
 import chuckeles.sstasker.model.Spaceship;
+import chuckeles.sstasker.model.crew.Cosmonaut;
 import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.Holder;
 import chuckeles.sstasker.system.Log;
@@ -55,6 +56,11 @@ public class OxygenGenerator extends PartWithoutHealth {
   @Override
   public void Repair() {
     mWorks = true;
+  }
+
+  @Override
+  public void GetRepaired(Cosmonaut cosmonaut) {
+    cosmonaut.Repair(this);
   }
 
   @Override
