@@ -1,12 +1,13 @@
 package chuckeles.sstasker.model;
 
+import chuckeles.sstasker.system.Constants;
+
 /**
  * A spaceship crew member. Has a name. This is a base class for more specialized crew members, e. g. an engineer.
  *
  * @see Spaceship
  */
-// TODO: Mark abstract
-public class Cosmonaut {
+public abstract class Cosmonaut {
 
   //region Constructor
 
@@ -24,6 +25,12 @@ public class Cosmonaut {
   // ------
 
   //region Methods
+
+  /**
+   * Updates the cosmonaut. Lowers the oxygen level if there's no oxygen generator around and
+   * kills cosmonaut if the oxygen level is 0.
+   */
+  public abstract void Update();
 
   //region Getters
 
@@ -48,6 +55,13 @@ public class Cosmonaut {
    * The name of the cosmonaut.
    */
   private String mName;
+
+  /**
+   * Oxygen level of this cosmonaut.
+   *
+   * @see Constants#MAX_OXYGEN_COSMONAUT
+   */
+  private double mOxygen = Constants.MAX_OXYGEN_COSMONAUT;
 
   //endregion
 
