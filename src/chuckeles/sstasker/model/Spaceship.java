@@ -1,6 +1,7 @@
 package chuckeles.sstasker.model;
 
 import chuckeles.sstasker.model.crew.Cosmonaut;
+import chuckeles.sstasker.model.crew.Engineer;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;
@@ -76,11 +77,16 @@ public class Spaceship {
 
     // add parts
     Log.Instance().Log("Adding parts to spaceship");
-
-    InstallPart(new Generator());
-    InstallPart(new OxygenGenerator());
-
+    mParts.add(new Generator());
+    mParts.add(new OxygenGenerator());
     Log.Instance().Log("Parts added:" + mParts.toString());
+
+    Log.Instance().Log("Adding crew");
+    mCrew.add(new Engineer("Patričko"));
+    mCrew.add(new Engineer("Džejky"));
+    mCrew.add(new Engineer("Domčo"));
+    mCrew.add(new Engineer("Pišta"));
+    Log.Instance().Log("Crew added: " + mCrew.toString());
   }
 
   //region Getters
