@@ -49,12 +49,12 @@ public class Generator extends PartWithHealth {
   }
 
   /**
-   * Substract energy from this generator. Used by other parts that consume energy.
+   * Subtract energy from this generator. Used by other parts that consume energy.
    *
    * @param energy How much to substract
    * @return How much energy was actually substracted
    */
-  public double SubstractEnergy(double energy) {
+  public double SubtractEnergy(double energy) {
     double e = Math.min(energy, mEnergy);
     mEnergy -= e;
 

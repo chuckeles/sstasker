@@ -47,6 +47,11 @@ public class Constants {
    */
   public static final double MAX_OXYGEN_COSMONAUT = 100.0;
 
+  /**
+   * How much oxygen a cosmonaut consumes per update.
+   */
+  public static final double OXYGEN_CONSUMPTION_COSMONAUT = 10.0;
+
   //endregion
 
 }

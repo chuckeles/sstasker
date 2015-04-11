@@ -35,7 +35,7 @@ public class OxygenGenerator extends PartWithoutHealth {
         Generator generator = (Generator)part;
 
         // get energy
-        energy.Set(energy.Get() + generator.SubstractEnergy(mConsumption - energy.Get()));
+        energy.Set(energy.Get() + generator.SubtractEnergy(mConsumption - energy.Get()));
       }
     });
 
@@ -63,12 +63,12 @@ public class OxygenGenerator extends PartWithoutHealth {
   }
 
   /**
-   * Substract oxygen from the oxygen generator.
+   * Subtract oxygen from the oxygen generator.
    *
    * @param energy How much to substract
    * @return How much oxygen was actually substracted
    */
-  public double SubstractOxygen(double energy) {
+  public double SubtractOxygen(double energy) {
     double o = Math.min(energy, mOxygen);
     mOxygen -= o;
 

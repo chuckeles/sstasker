@@ -1,5 +1,6 @@
 package chuckeles.sstasker.model;
 
+import chuckeles.sstasker.model.crew.Cosmonaut;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;

@@ -1,5 +1,6 @@
-package chuckeles.sstasker.model;
+package chuckeles.sstasker.model.crew;
 
+import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.system.Constants;
 
 /**
@@ -29,8 +30,28 @@ public abstract class Cosmonaut {
   /**
    * Updates the cosmonaut. Lowers the oxygen level if there's no oxygen generator around and
    * kills cosmonaut if the oxygen level is 0.
+   *
+   * @see Constants#OXYGEN_CONSUMPTION_COSMONAUT
    */
   public abstract void Update();
+
+  /**
+   * Increase oxygen level.
+   *
+   * @param oxygen Oxygen to add
+   */
+  protected void AddOxygen(double oxygen) {
+    mOxygen = Math.min(Constants.MAX_OXYGEN_COSMONAUT, mOxygen + oxygen);
+  }
+
+  /**
+   * Subtract oxygen from the cosmonaut.
+   *
+   * @param oxygen How much to subtract
+   */
+  public void SubtractOxygen(double oxygen) {
+    mOxygen = Math.max(0.0, mOxygen - oxygen);
+  }
 
   //region Getters
 
@@ -41,6 +62,15 @@ public abstract class Cosmonaut {
    */
   public String GetName() {
     return mName;
+  }
+
+  /**
+   * Get the oxygen level of the cosmonaut.
+   *
+   * @return Oxygen level
+   */
+  public double GetOxygen() {
+    return mOxygen;
   }
 
   //endregion
