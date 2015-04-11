@@ -42,5 +42,6 @@ ul,
 ol {
   &.unstyled {
     list-style: none;
+    padding-left: 0;
   }
 }

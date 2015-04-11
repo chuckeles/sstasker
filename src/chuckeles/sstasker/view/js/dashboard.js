@@ -17,9 +17,19 @@ angular.module("sstasker")
       );
     }
     else {
-      $scope.tasks = [];
-      $scope.crew = [];
-      $scope.parts = [];
+      $scope.tasks = [{
+        title: "New task",
+        description: "Testing... Testing..."
+      }];
+      $scope.crew = [{
+        name: "Dzejky"
+      }];
+      $scope.parts = [{
+        name: "Generator",
+        health: 100,
+        reliability: 96,
+        works: false
+      }];
       console.log("No $java object!");
     }
 
