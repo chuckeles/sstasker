@@ -1,6 +1,8 @@
 package chuckeles.sstasker.model.crew;
 
 import chuckeles.sstasker.model.Spaceship;
+import chuckeles.sstasker.model.parts.Generator;
+import chuckeles.sstasker.model.parts.Part;
 import chuckeles.sstasker.system.Constants;
 
 /**
@@ -52,6 +54,21 @@ public abstract class Cosmonaut {
   public void SubtractOxygen(double oxygen) {
     mOxygen = Math.max(0.0, mOxygen - oxygen);
   }
+
+  /**
+   * Make the cosmonaut try to repair a part.
+   *
+   * @param part The victim
+   */
+  public abstract void Repair(Part part);
+
+  /**
+   * Make the cosmonaut try to repair a generator, which is super hard, almost impossible.
+   *
+   * @param generator Target generator
+   * @see Generator
+   */
+  public abstract void Repair(Generator generator);
 
   //region Getters
 

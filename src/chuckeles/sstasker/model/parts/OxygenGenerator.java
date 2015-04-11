@@ -19,7 +19,7 @@ public class OxygenGenerator extends PartWithoutHealth {
   @Override
   public void Update() {
     if (!Works()) {
-      Log.Instance().Log("Oxygen generator updated but it is broken");
+      Log.Instance().Log("Oxygen generator updated but it is broken, oxygen level: " + (int)(mOxygen / mMaxOxygen * 100) + "%");
       return;
     }
 

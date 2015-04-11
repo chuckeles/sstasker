@@ -48,6 +48,16 @@ public class Spaceship {
     mParts.forEach(part -> part.Update());
     mCrew.forEach(cosmonaut -> cosmonaut.Update());
     // TODO: Update tasks
+
+    // command the crew to maintain and repair parts
+    // TODO: Remove (must be done via tasks)
+    mParts.forEach(part -> {
+      if (!part.Works())
+        mCrew.forEach(cosmonaut -> {
+          if (!part.Works())
+            cosmonaut.Repair(part);
+        });
+    });
   }
 
   /**
