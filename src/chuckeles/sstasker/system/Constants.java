@@ -32,6 +32,16 @@ public class Constants {
    */
   public static final int MAX_INVENTORY_SIZE = 8;
 
+  /**
+   * Max health of a spaceship part.
+   */
+  public static final double MAX_PART_HEALTH = 100.0;
+
+  /**
+   * Max level of oxygen for cosmonauts.
+   */
+  public static final double MAX_OXYGEN_COSMONAUT = 100.0;
+
   //endregion
 
 }

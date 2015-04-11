@@ -28,11 +28,6 @@ public class HeavyItem extends Item {
 
   //region Getters
 
-  /**
-   * Get the max size of a stack of this item.
-   *
-   * @return Max stack size
-   */
   @Override
   public int GetMaxStackSize() {
     return Constants.MAX_HEAVY_STACK_SIZE;
@@ -41,4 +36,5 @@ public class HeavyItem extends Item {
   //endregion
 
   //endregion
+
 }

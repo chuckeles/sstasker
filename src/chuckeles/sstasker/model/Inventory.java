@@ -11,7 +11,7 @@ import java.util.List;
  * An inventory of items. It is a essentially an ArrayList, but limited in size by the constant MAX_INVENTORY_SIZE.
  *
  * @see ArrayList
- * @see Constants
+ * @see Constants#MAX_INVENTORY_SIZE
  */
 public class Inventory {
 

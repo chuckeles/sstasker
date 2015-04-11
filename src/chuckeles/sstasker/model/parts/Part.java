@@ -13,6 +13,16 @@ public interface Part {
    */
   void Update();
 
+  /**
+   * Repair the part, restoring it to functional state.
+   */
+  void Repair();
+
+  /**
+   * Break the part, making it non-functional.
+   */
+  void Break();
+
   // region Getters
 
   /**
