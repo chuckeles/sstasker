@@ -4,6 +4,12 @@
   <div class="header">
     <h3>Úlohy</h3>
   </div>
+
+  <ul>
+    <li ng-repeat="task in tasks">
+      {{ task.title }}
+    </li>
+  </ul>
 </div>
 
 <div class="panel">
@@ -17,6 +23,12 @@
     <div class="header">
       <h3>Posádka</h3>
     </div>
+
+    <ul>
+      <li ng-repeat="member in crew">
+        {{ member.name }}
+      </li>
+    </ul>
   </div>
 
   <div class="panel small flex-auto">
@@ -24,8 +36,10 @@
       <h3>Časti</h3>
     </div>
 
-    <p ng-repeat="part in parts">
-      {{ part.name }}
-    </p>
+    <ul>
+      <li ng-repeat="part in parts">
+        {{ part.name }}
+      </li>
+    </ul>
   </div>
 </div>
