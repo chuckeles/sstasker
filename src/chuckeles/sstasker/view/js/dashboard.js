@@ -6,8 +6,12 @@ angular.module("sstasker")
     $scope.viewClass = "dashboard full flex";
 
     console.log("Requesting the task list");
-    if (window.$java)
+    if (window.$java) {
       $scope.taskList = window.$java.GetTaskList();
-    else
-      console.log("No $java object!")
+      console.log("Got: " + $scope.taskList);
+    }
+    else {
+      $scope.taskList = [];
+      console.log("No $java object!");
+    }
   }])

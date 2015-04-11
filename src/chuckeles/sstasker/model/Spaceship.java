@@ -8,10 +8,6 @@ import java.util.ArrayList;
  */
 public class Spaceship {
 
-  private Spaceship() {}
-
-  // ------
-
   /**
    * Get singleton instance.
    *
@@ -24,7 +20,13 @@ public class Spaceship {
     return mInstance;
   }
 
+  /**
+   * Initialize the spaceship.
+   */
+  // TODO: Maybe move to constructor
   public void Initialize() {
+    mTasks.add(new Task("Hello"));
+
     // TODO: Write
   }
 
