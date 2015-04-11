@@ -14,11 +14,12 @@
     color: sscolor("dark");
     margin: $margin-sides;
 
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      color: sscolor("dark", 3);
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 
