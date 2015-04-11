@@ -2,6 +2,7 @@ package chuckeles.sstasker.model.parts;
 
 import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.system.Constants;
+import chuckeles.sstasker.system.Holder;
 import chuckeles.sstasker.system.Log;
 
 import java.util.List;
@@ -26,8 +27,7 @@ public class OxygenGenerator extends PartWithoutHealth {
     mReliability *= 0.99;
 
     // get required energy
-    final double[] energy = {0.0}; // why can't a normal variable be used in a lambda???
-                                   // anyway, IntelliJ Idea suggested this, so... it works
+    final Holder<Double> energy = new Holder(0.0);
     List<Part> parts = Spaceship.Instance().GetParts();
     parts.forEach(part -> {
       // is generator?
@@ -35,12 +35,12 @@ public class OxygenGenerator extends PartWithoutHealth {
         Generator generator = (Generator)part;
 
         // get energy
-        energy[0] += generator.SubstractEnergy(mConsumption - energy[0]);
+        energy.Set(energy.Get() + generator.SubstractEnergy(mConsumption - energy.Get()));
       }
     });
 
     // generate oxygen
-    mOxygen = Math.min(mMaxOxygen, mOxygen + mGeneration * energy[0] / mConsumption);
+    mOxygen = Math.min(mMaxOxygen, mOxygen + mGeneration * energy.Get() / mConsumption);
 
     // break apart horribly
     if (Math.random() > mReliability / Constants.MAX_PART_RELIABILITY)
