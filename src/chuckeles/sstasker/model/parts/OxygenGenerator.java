@@ -82,6 +82,11 @@ public class OxygenGenerator extends PartWithoutHealth {
   }
 
   @Override
+  public String GetName() {
+    return "Generátor Kyslíka";
+  }
+
+  @Override
   public double GetReliability() {
     return mReliability;
   }

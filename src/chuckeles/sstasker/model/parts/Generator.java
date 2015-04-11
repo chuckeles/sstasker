@@ -64,6 +64,11 @@ public class Generator extends PartWithHealth {
   //region Getters
 
   @Override
+  public String GetName() {
+    return "Generátor";
+  }
+
+  @Override
   public double GetReliability() {
     return mReliability;
   }

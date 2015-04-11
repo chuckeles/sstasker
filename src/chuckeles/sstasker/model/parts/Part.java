@@ -26,6 +26,13 @@ public interface Part {
   // region Getters
 
   /**
+   * Get the name of the part.
+   *
+   * @return Part name
+   */
+  String GetName();
+
+  /**
    * Get the reliability of the part, that is the chance that the part will not break.
    *
    * @return The reliability of the part

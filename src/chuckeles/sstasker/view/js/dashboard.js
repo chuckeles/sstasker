@@ -7,19 +7,19 @@ angular.module("sstasker")
 
     console.log("Requesting the spaceship lists");
     if (window.$java) {
-      $scope.taskList = JSON.parse(window.$java.GetTasks());
-      $scope.crewList = JSON.parse(window.$java.GetCrew());
-      $scope.partList = JSON.parse(window.$java.GetParts());
+      $scope.tasks = JSON.parse(window.$java.GetTasks());
+      $scope.crew = JSON.parse(window.$java.GetCrew());
+      $scope.parts = JSON.parse(window.$java.GetParts());
       console.log("Got them, sizes: " +
-        $scope.taskList.length + ", " +
-        $scope.crewList.length + ", " +
-        $scope.partList.length
+        $scope.tasks.length + ", " +
+        $scope.crew.length + ", " +
+        $scope.parts.length
       );
     }
     else {
-      $scope.taskList = [];
-      $scope.crewList = [];
-      $scope.partList = [];
+      $scope.tasks = [];
+      $scope.crew = [];
+      $scope.parts = [];
       console.log("No $java object!");
     }
 
