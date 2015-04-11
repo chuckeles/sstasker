@@ -16,10 +16,14 @@ public class Generator extends PartWithHealth {
     super.Update();
 
     // decrease reliability
-    mReliability -= 0.1;
+    mReliability *= 0.94;
 
     // generate energy
     mEnergy = Math.max(mMaxEnergy, mEnergy + mGeneration * GetHealth() / Constants.MAX_PART_HEALTH);
+
+    // break apart horribly
+    if (Math.random() > mReliability / Constants.MAX_PART_RELIABILITY)
+      Break();
   }
 
   @Override
@@ -29,7 +33,7 @@ public class Generator extends PartWithHealth {
 
   @Override
   public void Break() {
-    mWorks = false;
+    mWorks = false; // TODO: Dispatch some sort of event
   }
 
   /**
@@ -84,7 +88,7 @@ public class Generator extends PartWithHealth {
    *
    * @see Constants#MAX_PART_RELIABILITY
    */
-  private double mReliability = Constants.MAX_PART_RELIABILITY * 0.8;
+  private double mReliability = Constants.MAX_PART_RELIABILITY * 0.98;
 
   /**
    * Max energy of the internal buffer.
