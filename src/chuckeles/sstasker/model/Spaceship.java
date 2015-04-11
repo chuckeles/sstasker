@@ -1,8 +1,13 @@
 package chuckeles.sstasker.model;
 
+import chuckeles.sstasker.model.parts.Generator;
+import chuckeles.sstasker.model.parts.OxygenGenerator;
+import chuckeles.sstasker.model.parts.Part;
 import chuckeles.sstasker.system.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * The main model of the spaceship. Singleton. Contains the list of spaceship parts, tasks,
@@ -34,11 +39,29 @@ public class Spaceship {
   }
 
   /**
+   * Update everything on the spaceship.
+   */
+  public void Update() {
+    mParts.forEach(part -> part.Update());
+    mCrew.forEach(cosmonaut -> cosmonaut.Update());
+    // TODO: Update tasks
+  }
+
+  /**
+   * Add new part to the spaceship.
+   *
+   * @param part Part to add
+   */
+  public void InstallPart(Part part) {
+    mParts.add(part);
+  }
+
+  /**
    * Load the spaceship from the disk. Returns true if successful or false if the file doesn't exist.
    *
    * @return True if successfully loaded, false otherwise
    */
-  public boolean Load() {
+  private boolean Load() {
     // TODO: Write
     return false;
   }
@@ -48,6 +71,14 @@ public class Spaceship {
    */
   private void InitRandomNew() {
     Log.Instance().Log("Initializing a new random spaceship");
+
+    // add parts
+    Log.Instance().Log("Adding parts to spaceship");
+
+    InstallPart(new Generator());
+    InstallPart(new OxygenGenerator());
+
+    Log.Instance().Log("Parts added:" + mParts.toString());
   }
 
   //region Getters
@@ -68,6 +99,15 @@ public class Spaceship {
    */
   public ArrayList<Cosmonaut> GetCrew() {
     return mCrew;
+  }
+
+  /**
+   * Get the list of spaceship parts.
+   *
+   * @return Read-only list of parts
+   */
+  public List<Part> GetParts() {
+    return Collections.unmodifiableList(mParts);
   }
 
   //endregion
@@ -98,5 +138,11 @@ public class Spaceship {
    */
   private Inventory mInventory = new Inventory();
 
+  /**
+   * The list of parts.
+   */
+  private ArrayList<Part> mParts = new ArrayList<>();
+
   //endregion
+
 }
