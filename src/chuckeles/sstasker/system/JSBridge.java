@@ -32,8 +32,10 @@ public class JSBridge {
    * Exit the application.
    */
   public void Exit() {
-    System.exit(0); // TODO: Handle more intelligently
+    Window.Close();
   }
+
+  //region Getters
 
   /**
    * Get the list of tasks.
@@ -86,6 +88,8 @@ public class JSBridge {
 
     return a.toString();
   }
+
+  //endregion
 
   //endregion
 

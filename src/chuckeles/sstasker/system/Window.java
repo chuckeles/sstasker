@@ -20,6 +20,9 @@ public class Window extends Application {
   @Override
   public void start(Stage primaryStage) throws Exception {
 
+    // set the instance
+    mInstance = this;
+
     // set up main stage
     Log.Instance().Log("Setting up the primary stage");
     mPrimaryStage = primaryStage;
@@ -38,11 +41,23 @@ public class Window extends Application {
 
   }
 
+  /**
+   * Close the application window.
+   */
+  public static void Close() {
+    mInstance.mPrimaryStage.close();
+  }
+
   //endregion
 
   // ------
 
   //region Fields
+
+  /**
+   * Current instance of the window.
+   */
+  private static Window mInstance;
 
   /**
    * Application's main stage.
