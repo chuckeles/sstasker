@@ -65,6 +65,15 @@ public class Engineer extends Cosmonaut {
       Log.Instance().Log("Engineer " + GetName() + " tried to repair the oxygen generator but failed miserably");
   }
 
+  //region Getters
+
+  @Override
+  public String GetDescription() {
+    return "mudry inzinier";
+  }
+
+  //endregion
+
   //endregion
 
 }
