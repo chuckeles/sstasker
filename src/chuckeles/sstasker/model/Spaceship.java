@@ -88,7 +88,9 @@ public class Spaceship {
     // TODO: Remove
     // add tasks
     Log.Instance().Log("Adding the maintanance task");
-    mTasks.add(new Task("Udržovanie Vesmírnej Lodi"));
+    Task t = new Task("Udržovanie Vesmírnej Lodi");
+    t.SetDescription("Naši inžinieri musia automaticky udržovať a opravovať všetky časti lode.");
+    mTasks.add(t);
 
     // add crew
     Log.Instance().Log("Adding crew");
