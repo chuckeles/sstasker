@@ -65,6 +65,7 @@ public class JSBridge {
     Spaceship.Instance().GetCrew().forEach(member -> a.put(
         new JSONObject()
             .put("name", member.GetName())
+            .put("description", member.GetDescription())
     ));
 
     return a.toString();
@@ -81,6 +82,7 @@ public class JSBridge {
     Spaceship.Instance().GetParts().forEach(part -> a.put(
         new JSONObject()
             .put("name", part.GetName())
+            .put("description", part.GetDescription())
             .put("health", part.GetHealth())
             .put("reliability", part.GetReliability())
             .put("works", part.Works())
