@@ -75,6 +75,11 @@ public class Generator extends PartWithHealth {
   }
 
   @Override
+  public String GetDescription() {
+    return "popis generatora";
+  }
+
+  @Override
   public double GetReliability() {
     return mReliability;
   }
