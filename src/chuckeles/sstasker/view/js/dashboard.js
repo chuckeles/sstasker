@@ -5,6 +5,14 @@ angular.module("sstasker")
 
     $scope.viewClass = "dashboard full flex";
 
+    $scope.details = null;
+    $scope.show = function(item) {
+      if (item)
+        $scope.details = item;
+      else
+        $scope.details = null;
+    }
+
     console.log("Requesting the spaceship lists");
     if (window.$java) {
       $scope.tasks = JSON.parse(window.$java.GetTasks());
@@ -22,10 +30,12 @@ angular.module("sstasker")
         description: "Testing... Testing..."
       }];
       $scope.crew = [{
-        name: "Dzejky"
+        name: "Dzejky",
+        description: "Filthy cosmonaut"
       }];
       $scope.parts = [{
         name: "Generator",
+        description: "Works",
         health: 100,
         reliability: 96,
         works: false

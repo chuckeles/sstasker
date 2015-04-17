@@ -7,7 +7,7 @@
 
   <ul class="unstyled">
     <li ng-repeat="task in tasks">
-      {{ task.title }}
+      <button class="button button-full" ng-click="show(task)">{{ task.title }}</button>
     </li>
   </ul>
 </div>
@@ -16,6 +16,9 @@
   <div class="header">
     <h3>Detaily</h3>
   </div>
+
+  <h4>{{ details.name || details.title }}</h4>
+  <p>{{ details.description }}</p>
 </div>
 
 <div class="panel-group flex column">
@@ -26,7 +29,7 @@
 
     <ul class="unstyled">
       <li ng-repeat="member in crew">
-        {{ member.name }}
+        <button class="button button-full" ng-click="show(member)">{{ member.name }}</button>
       </li>
     </ul>
   </div>
@@ -38,7 +41,7 @@
 
     <ul class="unstyled">
       <li ng-repeat="part in parts">
-        {{ part.name }}
+        <button class="button button-full" ng-click="show(part)">{{ part.name }}</button>
       </li>
     </ul>
   </div>
