@@ -76,7 +76,14 @@ public class Generator extends PartWithHealth {
 
   @Override
   public String GetDescription() {
-    return "popis generatora";
+    // TODO: Move to some txt file
+    return "Tento generátor generuje elektrickú energiu potrebnú na beh väčšiny častí na lodi. " +
+        "Generátor vnútri obsahuje akumulátor o veľkosti " + mMaxEnergy + " A. Časti lode odoberajú energiu " +
+        "z tohoto akumulátora. Ak sa vyčerpá, znamená to, že loď spotrebúva príliš veľa energie (alebo " +
+        "že generátor momentále nefunguje). \n" +
+        "Nikto poriadne nevie, ako vlastne tento generátor funguje. Niektorí vedci majú podozrenie, " +
+        "že to má niečo spoločné so štiepením antihmoty, ale táto oblasť ešte nie je vedecky známa. " +
+        "Všetko čo teraz vieme je že to proste funguje a to nám stačí.";
   }
 
   @Override
