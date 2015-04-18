@@ -15,6 +15,8 @@ angular.module("sstasker")
 
     console.log("Requesting the spaceship lists");
     if (window.$java) {
+
+      // request data from the app
       $scope.tasks = JSON.parse(window.$java.GetTasks());
       $scope.crew = JSON.parse(window.$java.GetCrew());
       $scope.parts = JSON.parse(window.$java.GetParts());
@@ -23,8 +25,11 @@ angular.module("sstasker")
         $scope.crew.length + ", " +
         $scope.parts.length
       );
+
     }
     else {
+
+      console.log("Add some placeholders");
       $scope.tasks = [{
         title: "New task",
         description: "Testing... Testing..."
@@ -35,12 +40,14 @@ angular.module("sstasker")
       }];
       $scope.parts = [{
         name: "Generator",
-        description: "Works",
+        description:
+          "Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description.",
         health: 100,
         reliability: 96,
         works: false
       }];
       console.log("No $java object!");
+
     }
 
   }])
