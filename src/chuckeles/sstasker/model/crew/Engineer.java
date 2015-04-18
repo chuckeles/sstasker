@@ -69,7 +69,11 @@ public class Engineer extends Cosmonaut {
 
   @Override
   public String GetDescription() {
-    return "mudry inzinier";
+    return "Kozmonaut, inžinier. Tento kozmonaut má za sebou seriózne veľa rokov strávených nad knihami, " +
+        "pri svetle sviečky a so šálkou čersvého zeleného čaja. Inžinieri sú obvykle veľmi chytrí, ale ani ten " +
+        "najskúsenejší inžinier nepozná všetky súčiastky na vesmírnej lodi. \n\n" +
+        "Inžinieri sú dobrí v udržiavaní a opravovaní častí vesmírnej lode. Bohužiaľ ani ten najlepší inžinier " +
+        "**nevie opraviť generátor**. Inžinieri sú tiež dosť neschopní čo sa týka pilotovania vesmírnej lodi.";
   }
 
   //endregion
