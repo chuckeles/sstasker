@@ -32,7 +32,9 @@ angular.module("sstasker")
       console.log("Add some placeholders");
       $scope.tasks = [{
         title: "New task",
-        description: "Testing... Testing..."
+        description:
+          "# Testing... Testing...\n\n" +
+          "Using **markdown**!"
       }];
       $scope.crew = [{
         name: "Dzejky",
