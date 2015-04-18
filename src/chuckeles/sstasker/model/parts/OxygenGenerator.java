@@ -94,7 +94,14 @@ public class OxygenGenerator extends PartWithoutHealth {
 
   @Override
   public String GetDescription() {
-    return "popis generatora kyslika";
+    return "Tento generátor produkuje kyslík. Kyslík je jedna z najdôležitejších vecí na vesmírnej " +
+        "lodi a naši vedci sú skutočne radi, že sa im včas podarilo prísť na to, ako túto látku " +
+        "produkovať. Bez nej je všetko živé na lodi odsúdené na zánik. \n\n" +
+        "Generátor kyslíka obsahuje malú nádrž s kapacitou **" + mMaxOxygen + " l**. Všetko čo " +
+        "spotrebúva kyslík ho ťahá z tejto nádrže. Generátor pri výrobe kyslíka spotrebúva " +
+        "**" + mConsumption + " A**, a to i v prípade, keď je nádrž plná. Generátor kyslíka " +
+        "túto energiu ťahá z generátora a v prípade nedostatku energie môžu vzniknúť " +
+        "fatálne problémy.";
   }
 
   @Override
