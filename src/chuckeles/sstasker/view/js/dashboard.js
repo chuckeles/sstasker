@@ -29,6 +29,7 @@ angular.module("sstasker")
     }
     else {
 
+      console.log("No $java object!");
       console.log("Add some placeholders");
       $scope.tasks = [{
         title: "New task",
@@ -38,17 +39,17 @@ angular.module("sstasker")
       }];
       $scope.crew = [{
         name: "Dzejky",
-        description: "Filthy cosmonaut"
+        description: "Filthy cosmonaut",
+        oxygen: 0.8
       }];
       $scope.parts = [{
         name: "Generator",
         description:
           "Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description. Very long description.",
-        health: 100,
-        reliability: 96,
+        health: 0.9,
+        reliability: 0.5,
         works: false
       }];
-      console.log("No $java object!");
 
     }
 

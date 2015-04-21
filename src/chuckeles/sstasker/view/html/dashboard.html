@@ -19,6 +19,12 @@
 
   <h4>{{ details.name || details.title }}</h4>
   <div marked="details.description"></div>
+
+  <h4 ng-show="details">Štatistiky</h4>
+  <p ng-show="details.oxygen">Kyslík: {{ details.oxygen * 100 }}%</p>
+  <p ng-show="details.health">Zdravie / Výdrž: {{ details.health * 100 }}%</p>
+  <p ng-show="details.reliability">Spolahlivosť: {{ details.reliability * 100 }}%</p>
+  <p ng-show="details.works !== undefined">Funguje: <span ng-show="details.works">Áno</span><span ng-show="!details.works">Nie</span></p>
 </div>
 
 <div class="panel-group flex column">

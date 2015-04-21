@@ -66,6 +66,7 @@ public class JSBridge {
         new JSONObject()
             .put("name", member.GetName())
             .put("description", member.GetDescription())
+            .put("oxygen", member.GetOxygen() / Constants.MAX_OXYGEN_COSMONAUT)
     ));
 
     return a.toString();
@@ -83,8 +84,8 @@ public class JSBridge {
         new JSONObject()
             .put("name", part.GetName())
             .put("description", part.GetDescription())
-            .put("health", part.GetHealth())
-            .put("reliability", part.GetReliability())
+            .put("health", part.GetHealth() / Constants.MAX_PART_HEALTH)
+            .put("reliability", part.GetReliability() / Constants.MAX_PART_RELIABILITY)
             .put("works", part.Works())
     ));
 
