@@ -1,5 +1,6 @@
 package chuckeles.sstasker.model.tasks;
 
+import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.model.crew.Engineer;
 import chuckeles.sstasker.model.parts.Part;
 
@@ -44,9 +45,26 @@ public class RepairTask extends Task {
     mPart = part;
   }
 
+
   //endregion
 
   //region Methods
+
+  /**
+   * Update the task. This makes the engineers try to repair the part.
+   */
+  @Override
+  public void Update() {
+    if (mPart == null)
+      return;
+
+    // engineers! get to work!
+    mEngineers.forEach(engineer -> mPart.GetRepaired(engineer));
+
+    // remove task if successful
+    if (mPart.Works())
+      Spaceship.Instance().RemoveTask(this);
+  }
 
   /**
    * Add engineer to repair the part.

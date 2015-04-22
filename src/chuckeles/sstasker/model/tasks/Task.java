@@ -45,6 +45,11 @@ public abstract class Task {
     mTitle = title;
   }
 
+  /**
+   * Update the task.
+   */
+  public abstract void Update();
+
   //region Getters
 
   /**

@@ -49,17 +49,11 @@ public class Spaceship {
     Log.Instance().Log("Updating the spaceship");
     mParts.forEach(part -> part.Update());
     mCrew.forEach(cosmonaut -> cosmonaut.Update());
-    // TODO: Update tasks
+    mTasks.forEach(task -> task.Update());
 
-    // command the crew to maintain and repair parts
-    // TODO: Remove (must be done via tasks)
-    mParts.forEach(part -> {
-      if (!part.Works())
-        mCrew.forEach(cosmonaut -> {
-          if (!part.Works())
-            part.GetRepaired(cosmonaut);
-        });
-    });
+    Log.Instance().Log("Removing tasks");
+    mTasksToRemove.forEach(task -> mTasks.remove(task));
+    mTasksToRemove.clear();
   }
 
   /**
@@ -89,8 +83,8 @@ public class Spaceship {
 
     // TODO: Remove
     // add tasks
-    Log.Instance().Log("Adding the maintanance task");
-    Task t = new RepairTask("Udržovanie Vesmírnej Lodi");
+    Log.Instance().Log("Adding the repair tasks");
+    RepairTask t = new RepairTask("Opravovanie Vesmírnej Lodi");
     t.SetDescription("Naši inžinieri musia automaticky udržovať a opravovať všetky časti lode.");
     mTasks.add(t);
 
@@ -108,8 +102,21 @@ public class Spaceship {
       mParts.add(new Generator());
     for (int i = 0, imax = (int)(Math.random() * 2) + 1; i < imax; ++i)
       mParts.add(new OxygenGenerator());
-
     Log.Instance().Log("Parts added: " + mParts.toString());
+
+    // configure the repair task
+    t.AddEngineer((Engineer)mCrew.get(0));
+    t.SetPart(mParts.get(0));
+  }
+
+  /**
+   * Remove a task. The task will be remove in the end of the update.
+   *
+   * @param task Task to remove
+   * @see #Update()
+   */
+  public void RemoveTask(Task task) {
+    mTasksToRemove.add(task);
   }
 
   //region Getters
@@ -158,6 +165,11 @@ public class Spaceship {
    * The list of tasks.
    */
   private ArrayList<Task> mTasks = new ArrayList<>();
+
+  /**
+   * Internal list of tasks to remove.
+   */
+  private ArrayList<Task> mTasksToRemove = new ArrayList<>();
 
   /**
    * The list of crew members.
