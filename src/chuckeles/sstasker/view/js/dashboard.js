@@ -1,6 +1,6 @@
 angular.module("sstasker")
 
-  .controller("dashboardCtrl", ["$scope", function($scope) {
+  .controller("dashboardCtrl", ["$scope", "$timeout", function($scope, $timeout) {
     console.log("Dashboard state loaded");
 
     $scope.viewClass = "dashboard full flex";
@@ -23,6 +23,13 @@ angular.module("sstasker")
 
       $scope.getLists();
       $scope.details = null;
+
+      var toast = document.getElementById("updateToast");
+      toast.classList.add("active");
+
+      $timeout(function() {
+        toast.classList.remove("active");
+      }, 4000);
     };
 
     $scope.exit = function() {
