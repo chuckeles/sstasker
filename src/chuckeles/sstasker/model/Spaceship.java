@@ -104,6 +104,13 @@ public class Spaceship {
     Log.Instance().Log("Adding parts to spaceship");
     mParts.add(new Generator());
     mParts.add(new OxygenGenerator());
+
+    // random parts
+    for (int i = 0, imax = (int)(Math.random() * 4); i < imax; ++i)
+      mParts.add(new Generator());
+    for (int i = 0, imax = (int)(Math.random() * 2); i < imax; ++i)
+      mParts.add(new OxygenGenerator());
+
     Log.Instance().Log("Parts added: " + mParts.toString());
   }
 
