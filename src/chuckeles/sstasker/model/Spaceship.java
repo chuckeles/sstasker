@@ -8,6 +8,7 @@ import chuckeles.sstasker.model.parts.Part;
 import chuckeles.sstasker.system.Log;
 import chuckeles.sstasker.model.tasks.RepairTask;
 import chuckeles.sstasker.model.tasks.Task;
+import chuckeles.sstasker.system.UpdateLog;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,9 +50,19 @@ public class Spaceship {
    */
   public void Update() {
     Log.Instance().Log("Updating the spaceship");
+
+    UpdateLog.Instance()
+        .Clear()
+        .WriteLn("Aktualizujem vesmírnu loď")
+        .WriteLn();
+
     mParts.forEach(part -> part.Update());
     mCrew.forEach(cosmonaut -> cosmonaut.Update());
     mTasks.forEach(task -> task.Update());
+
+    UpdateLog.Instance()
+        .WriteLn()
+        .WriteLn("Loď aktualizovaná");
 
     Log.Instance().Log("Removing tasks");
     mTasksToRemove.forEach(task -> mTasks.remove(task));
