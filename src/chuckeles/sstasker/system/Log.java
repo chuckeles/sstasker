@@ -8,6 +8,8 @@ import java.util.Date;
 // TODO: Add support for the log file
 public class Log {
 
+  private Log() {}
+
   //region Methods
 
   /**
