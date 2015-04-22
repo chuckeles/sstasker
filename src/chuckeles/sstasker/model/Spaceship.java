@@ -6,6 +6,8 @@ import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;
 import chuckeles.sstasker.system.Log;
+import chuckeles.sstasker.model.tasks.RepairTask;
+import chuckeles.sstasker.model.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -88,7 +90,7 @@ public class Spaceship {
     // TODO: Remove
     // add tasks
     Log.Instance().Log("Adding the maintanance task");
-    Task t = new Task("Udržovanie Vesmírnej Lodi");
+    Task t = new RepairTask("Udržovanie Vesmírnej Lodi");
     t.SetDescription("Naši inžinieri musia automaticky udržovať a opravovať všetky časti lode.");
     mTasks.add(t);
 
@@ -102,13 +104,9 @@ public class Spaceship {
 
     // add parts
     Log.Instance().Log("Adding parts to spaceship");
-    mParts.add(new Generator());
-    mParts.add(new OxygenGenerator());
-
-    // random parts
-    for (int i = 0, imax = (int)(Math.random() * 4); i < imax; ++i)
+    for (int i = 0, imax = (int)(Math.random() * 4) + 1; i < imax; ++i)
       mParts.add(new Generator());
-    for (int i = 0, imax = (int)(Math.random() * 2); i < imax; ++i)
+    for (int i = 0, imax = (int)(Math.random() * 2) + 1; i < imax; ++i)
       mParts.add(new OxygenGenerator());
 
     Log.Instance().Log("Parts added: " + mParts.toString());
