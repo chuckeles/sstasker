@@ -41,11 +41,11 @@ angular.module("sstasker")
         console.log("Requesting the update log");
         $scope.details.description = "";
         JSON.parse(window.$java.GetUpdateLog()).forEach(function(line) {
-          $scope.details.description += line + "\n";
+          $scope.details.description += line + "  \n";
         });
       }
       else
-        $scope.details.description = "update log\ncoooool";
+        $scope.details.description = "update log  \ncoooool";
     };
 
     $scope.exit = function() {

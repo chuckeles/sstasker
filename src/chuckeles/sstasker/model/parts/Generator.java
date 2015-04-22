@@ -3,6 +3,7 @@ package chuckeles.sstasker.model.parts;
 import chuckeles.sstasker.model.crew.Cosmonaut;
 import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.Log;
+import chuckeles.sstasker.system.UpdateLog;
 
 /**
  * Power generator. Provides power for the spaceship. Produces infinite amount of power as long as it is functional.
@@ -17,7 +18,9 @@ public class Generator extends PartWithHealth {
   public void Update() {
     if (!Works()) {
       Log.Instance().Log("Generator updated but it is broken," +
-          " energy: " + (int)(mEnergy / mMaxEnergy * 100) + "%");
+          " energy: " + (int) (mEnergy / mMaxEnergy * 100) + "%");
+      UpdateLog.Instance().WriteLn("Generátor je pokazený, energia: " +
+          (int) (mEnergy / mMaxEnergy * 100) + "%");
       return;
     }
 
@@ -37,6 +40,10 @@ public class Generator extends PartWithHealth {
         " reliability: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
         ", energy: " + (int)(mEnergy / mMaxEnergy * 100) + "%" +
         ", works: " + mWorks);
+    UpdateLog.Instance().WriteLn("Generátor aktualizovaný," +
+        " spolahlivosť: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
+        ", energia: " + (int)(mEnergy / mMaxEnergy * 100) + "%" +
+        ", funguje: " + (mWorks ? "áno" : "nie"));
   }
 
   @Override

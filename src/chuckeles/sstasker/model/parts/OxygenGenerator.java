@@ -5,6 +5,7 @@ import chuckeles.sstasker.model.crew.Cosmonaut;
 import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.Holder;
 import chuckeles.sstasker.system.Log;
+import chuckeles.sstasker.system.UpdateLog;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class OxygenGenerator extends PartWithoutHealth {
   public void Update() {
     if (!Works()) {
       Log.Instance().Log("Oxygen generator updated but it is broken, oxygen level: " + (int)(mOxygen / mMaxOxygen * 100) + "%");
+      UpdateLog.Instance().WriteLn("Generátor kyslíka je pokazený, kyslík: " + (int) (mOxygen / mMaxOxygen * 100) + "%");
       return;
     }
 
@@ -51,6 +53,10 @@ public class OxygenGenerator extends PartWithoutHealth {
         " reliability: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
         ", oxygen: " + (int)(mOxygen / mMaxOxygen * 100) + "%" +
         ", works: " + mWorks);
+    UpdateLog.Instance().WriteLn("Generátor kyslíka aktualizovaný," +
+        " spolahlivosť: " + (int) (mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
+        ", kyslík: " + (int) (mOxygen / mMaxOxygen * 100) + "%" +
+        ", funguje: " + (mWorks ? "áno" : "nie"));
   }
 
   @Override
