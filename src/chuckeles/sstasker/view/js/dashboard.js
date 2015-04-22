@@ -14,6 +14,7 @@ angular.module("sstasker")
     }
 
     $scope.update = function() {
+      // request update
       if (window.$java) {
         console.log("Requesting an update");
         window.$java.Update();
@@ -21,15 +22,30 @@ angular.module("sstasker")
       else
         console.log("No $java object!");
 
+      // update lists
       $scope.getLists();
       $scope.details = null;
 
+      // show toast
       var toast = document.getElementById("updateToast");
       toast.classList.add("active");
-
       $timeout(function() {
         toast.classList.remove("active");
       }, 4000);
+
+      // show update log
+      $scope.details = {
+        title: "Log Aktualizácií"
+      };
+      if (window.$java) {
+        console.log("Requesting the update log");
+        $scope.details.description = "";
+        JSON.parse(window.$java.GetUpdateLog()).forEach(function(line) {
+          $scope.details.description += line + "\n";
+        });
+      }
+      else
+        $scope.details.description = "update log\ncoooool";
     };
 
     $scope.exit = function() {

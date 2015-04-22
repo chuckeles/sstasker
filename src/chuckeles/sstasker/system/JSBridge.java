@@ -37,6 +37,14 @@ public class JSBridge {
 
   //region Getters
 
+  public String GetUpdateLog() {
+    JSONArray a = new JSONArray();
+
+    UpdateLog.Instance().GetLog().forEach(a::put);
+
+    return a.toString();
+  }
+
   /**
    * Get the list of tasks.
    *
