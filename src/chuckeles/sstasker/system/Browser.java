@@ -18,8 +18,9 @@ public class Browser extends Region {
 
   /**
    * Create new browser.
+   * @param indexFile
    */
-  public Browser() {
+  public Browser(String indexFile) {
     getChildren().add(mBrowser);
 
     //mWebEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
@@ -40,7 +41,7 @@ public class Browser extends Region {
     //});
 
     Log.Instance().Log("Loading the index.html file");
-    mWebEngine.load(Browser.class.getResource("/chuckeles/sstasker/view/index.html").toExternalForm());
+    mWebEngine.load(Browser.class.getResource(indexFile).toExternalForm());
   }
 
   //endregion

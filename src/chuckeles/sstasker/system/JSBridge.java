@@ -35,8 +35,20 @@ public class JSBridge {
     Window.Close();
   }
 
+  /**
+   * Show the new task.
+   */
+  public void NewTask() {
+
+  }
+
   //region Getters
 
+  /**
+   * Get the log of the last update cycle of the spaceship.
+   *
+   * @return Update log
+   */
   public String GetUpdateLog() {
     JSONArray a = new JSONArray();
 

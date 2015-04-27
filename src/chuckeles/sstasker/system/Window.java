@@ -67,7 +67,7 @@ public class Window extends Application {
   /**
    * My webview component.
    */
-  private Browser mBrowser = new Browser();
+  private Browser mBrowser = new Browser("/chuckeles/sstasker/view/index.html");
 
   //endregion
 
