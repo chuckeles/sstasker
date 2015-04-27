@@ -5,11 +5,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * The SSTasker window mainly for displaying the webview.
+ * The SSTasker window mainly for displaying the webview. Singleton.
  */
 public class Window extends Application {
 
   //region Methods
+
+  /**
+   * Get the singleton instance.
+   *
+   * @return Singleton instance
+   */
+  public static Window Instance() {
+    return mInstance;
+  }
 
   /**
    * Start the SSTasker application.
@@ -35,10 +44,42 @@ public class Window extends Application {
     final Scene scene = new Scene(mBrowser, Constants.WINDOW_MIN_WIDTH, Constants.WINDOW_MIN_HEIGHT);
     mPrimaryStage.setScene(scene);
 
+    // initialize new task window
+    Log.Instance().Log("Initializing the new task window");
+    InitNewTaskWindow();
+
     // show the window
     Log.Instance().Log("Showing the scene");
     mPrimaryStage.show();
 
+  }
+
+  /**
+   * Initialize the new task window.
+   */
+  public void InitNewTaskWindow() {
+    // set up stage
+    mNewTaskStage.setTitle("SSTasker - Nová úloha");
+    mNewTaskStage.setMinWidth(Constants.WINDOW_NEW_TASK_MIN_WIDTH);
+    mNewTaskStage.setMaxHeight(Constants.WINDOW_NEW_TASK_MIN_HEIGHT);
+
+    // set up scene
+    final Scene scene = new Scene(mNewTaskBrowser, Constants.WINDOW_NEW_TASK_MIN_WIDTH, Constants.WINDOW_NEW_TASK_MIN_HEIGHT);
+    mNewTaskStage.setScene(scene);
+  }
+
+  /**
+   * Show the new task window.
+   */
+  public void ShowNewTaskWindow() {
+    mNewTaskStage.show();
+  }
+
+  /**
+   * Close the new task window.
+   */
+  public void CloseNewTaskWindow() {
+    mNewTaskStage.hide();
   }
 
   /**
@@ -68,6 +109,16 @@ public class Window extends Application {
    * My webview component.
    */
   private Browser mBrowser = new Browser("/chuckeles/sstasker/view/index.html");
+
+  /**
+   * The stage for the new task window.
+   */
+  private Stage mNewTaskStage = new Stage();
+
+  /**
+   * The browser for the new task window.
+   */
+  private Browser mNewTaskBrowser = new Browser("/chuckeles/sstasker/newtask/index.html");
 
   //endregion
 

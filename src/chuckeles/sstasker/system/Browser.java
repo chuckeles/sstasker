@@ -40,7 +40,7 @@ public class Browser extends Region {
       );
     //});
 
-    Log.Instance().Log("Loading the index.html file");
+    Log.Instance().Log("Loading the " + indexFile + " file");
     mWebEngine.load(Browser.class.getResource(indexFile).toExternalForm());
   }
 

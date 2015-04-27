@@ -39,7 +39,8 @@ public class JSBridge {
    * Show the new task.
    */
   public void NewTask() {
-
+    Log.Instance().Log("Showing the new task window");
+    Window.Instance().ShowNewTaskWindow();
   }
 
   //region Getters
