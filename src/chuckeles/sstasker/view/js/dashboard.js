@@ -100,4 +100,20 @@ angular.module("sstasker")
     };
     $scope.getLists();
 
+    $scope.newTask = function() {
+      if (window.$java) {
+        console.log("Requesting the creation of a new task");
+        window.$java.NewTask();
+
+        $scope.getLists();
+      }
+      else {
+        $scope.tasks.push({
+          title: "New task " + Math.floor(Math.random() * 10 + 1),
+          description:
+          "Task add using the New Task button."
+        });
+      }
+    };
+
   }])
