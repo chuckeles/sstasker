@@ -1,10 +1,77 @@
 /// <reference path="def/angular.d.ts" />
 /// <reference path="def/angular-ui-router.d.ts" />
 
+interface IJava {
+  GetParts : Function
+}
+
+interface IJavaWindow extends Window {
+  $java : IJava
+}
+
+interface IPart {
+  name : string;
+  description : string;
+
+  health : number;
+  reliability : number;
+  works : boolean;
+}
+
+interface IRepairCtrlScope extends ng.IScope {
+  parts : Array<IPart>;
+  next : Function;
+}
+
+class Part implements IPart {
+  constructor(
+    public name : string,
+    public description : string,
+    public health : number = 1,
+    public reliability : number = 1,
+    public works : boolean = true) {}
+}
+
 angular.module("newTaskApp")
 
   .controller("RepairCtrl", function RepairCtrl(
-    $scope : ng.IScope,
+    $scope : IRepairCtrlScope,
     $state : ng.ui.IStateService) {
     console.log("Repair state loaded");
+
+    $scope.parts = [];
+    console.log("Requesting the part list");
+    if ((<IJavaWindow>window).$java) {
+      $scope.parts = (<IJavaWindow>window).$java.GetParts();
+    }
+    else {
+      console.log("No $java object!");
+      console.log("Adding placeholders");
+
+      $scope.parts = [
+        new Part(
+          "Generator",
+          "Makes energy",
+          Math.random(),
+          Math.random(),
+          Math.random() > .5),
+        new Part(
+          "Generator",
+          "Makes tons of energy",
+          Math.random(),
+          Math.random(),
+          Math.random() > .5),
+        new Part(
+          "Oxygen Generator",
+          "Makes oxygen",
+          Math.random(),
+          Math.random(),
+          Math.random() > .5),new Part(
+          "Cool Oxygen Generator",
+          "Makes poison",
+          Math.random(),
+          Math.random(),
+          Math.random() > .5)
+      ];
+    }
   });

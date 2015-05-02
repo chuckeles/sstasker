@@ -2,6 +2,12 @@
 
 <form>
   <select ng-model="part">
+    <option value="{{ $index }}" ng-repeat="part in parts">
+      {{ part.name }}
+      -
+      {{ part.reliability | number }}
+      {{ !part.works ? "(nefunguje!)" : "" }}
+    </option>
   </select>
 
   <button ng-click="next()">
