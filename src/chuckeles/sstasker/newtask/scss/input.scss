@@ -1,0 +1,31 @@
+button,
+input,
+select {
+  margin: 1em;
+}
+
+button {
+  padding: .4em 1em;
+
+  transition: background-color .4s;
+
+  color: sscolor("dark", 2);
+  border: none;
+  border-radius: 8px;
+  background-color: sscolor("primary");
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: sscolor("primary", -4);
+  }
+}
+
+select {
+  padding: .4em 1em;
+
+  color: sscolor("dark", 2);
+  border: none;
+  border-radius: 8px;
+}
