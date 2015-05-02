@@ -2,16 +2,22 @@
 /// <reference path="def/angular-ui-router.d.ts" />
 
 interface ITypeCtrlScope extends ng.IScope {
-  type: String;
+  type: string;
   next : Function;
 }
 
 angular.module("newTaskApp")
 
-  .controller("TypeCtrl", function TypeCtrl($scope : ITypeCtrlScope) {
+  .controller("TypeCtrl", function TypeCtrl(
+    $scope : ITypeCtrlScope,
+    $state : ng.ui.IStateService) {
     console.log("Type state loaded");
 
     $scope.next = function() {
-      console.log("Selected: " + $scope.type);
+      if (!$scope.type)
+        return;
+
+      console.log("Selected task type: " + $scope.type);
+      $state.go($scope.type);
     };
   });

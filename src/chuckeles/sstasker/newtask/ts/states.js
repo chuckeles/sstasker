@@ -4,6 +4,9 @@ angular.module("newTaskApp").config(function StateConfig($stateProvider) {
     $stateProvider.state("type", {
         templateUrl: "html/type.html",
         controller: "TypeCtrl"
+    }).state("repair", {
+        templateUrl: "html/repair.html",
+        controller: "RepairCtrl"
     });
 }).run(function GoToTypeState($state) {
     $state.go("type");
