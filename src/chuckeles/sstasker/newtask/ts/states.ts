@@ -3,16 +3,17 @@
 
 angular.module("newTaskApp")
 
-  .config(function($stateProvider : ng.ui.IStateProvider) {
+  .config(function StateConfig($stateProvider : ng.ui.IStateProvider) {
 
     $stateProvider
 
       .state("type", {
-        templateUrl: "html/type.html"
+        templateUrl: "html/type.html",
+        controller: "TypeCtrl"
       });
 
   })
 
-  .run(function($state : ng.ui.IStateService) {
+  .run(function GoToTypeState($state : ng.ui.IStateService) {
     $state.go("type");
   });
