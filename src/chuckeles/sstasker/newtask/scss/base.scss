@@ -1,9 +1,49 @@
-html,
-body {
-  width: 100%;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 24px sans-serif;
+
   height: 100%;
+
+  color: sscolor("light");
+  background-color: sscolor("dark");
 }
 
 body {
+  position: relative;
 
+  overflow: hidden;
+
+  height: 100%;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    text-align: center;
+  }
+}
+
+a {
+  transition: color .5s;
+  text-decoration: none;
+
+  color: sscolor("primary");
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: sscolor("primary", -1);
+  }
+}
+
+ul,
+ol {
+  &.unstyled {
+    padding-left: 0;
+
+    list-style: none;
+  }
 }
