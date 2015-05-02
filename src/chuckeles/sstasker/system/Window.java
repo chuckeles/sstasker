@@ -61,7 +61,7 @@ public class Window extends Application {
     // set up stage
     mNewTaskStage.setTitle("SSTasker - Nová úloha");
     mNewTaskStage.setMinWidth(Constants.WINDOW_NEW_TASK_MIN_WIDTH);
-    mNewTaskStage.setMaxHeight(Constants.WINDOW_NEW_TASK_MIN_HEIGHT);
+    mNewTaskStage.setMinHeight(Constants.WINDOW_NEW_TASK_MIN_HEIGHT);
 
     // set up scene
     final Scene scene = new Scene(mNewTaskBrowser, Constants.WINDOW_NEW_TASK_MIN_WIDTH, Constants.WINDOW_NEW_TASK_MIN_HEIGHT);
