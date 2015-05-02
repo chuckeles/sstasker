@@ -1,0 +1,2 @@
+html,body{width:100%;height:100%}[full]{width:100%;height:100%}[flex]{display:-webkit-flex;display:-ms-flexbox;display:flex}[flex~="row"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}[flex~="column"]{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}[flex~="center"]{-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+/*# sourceMappingURL=style.css.map */

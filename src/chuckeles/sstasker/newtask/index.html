@@ -7,11 +7,15 @@
   <title>SSTasker - Nová úloha</title>
 
   <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
 
 </head>
 
 <body ng-app="newTaskApp">
-  New Task
+
+  <ui-view full flex="center">
+    <p>Loading...</p>
+  </ui-view>
 
   <script src="js/angular.js"></script>
   <script src="js/angular-animate.js"></script>
