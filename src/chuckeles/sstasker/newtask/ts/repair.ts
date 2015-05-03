@@ -42,7 +42,7 @@ angular.module("newTaskApp")
     $scope.parts = [];
     console.log("Requesting the part list");
     if ((<IJavaWindow>window).$java) {
-      $scope.parts = (<IJavaWindow>window).$java.GetParts();
+      $scope.parts = JSON.parse((<IJavaWindow>window).$java.GetParts());
     }
     else {
       console.log("No $java object!");

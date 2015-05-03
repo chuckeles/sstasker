@@ -86,6 +86,7 @@ public class Window extends Application {
    * Close the application window.
    */
   public static void Close() {
+    mInstance.mNewTaskStage.close();
     mInstance.mPrimaryStage.close();
   }
 

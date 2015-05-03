@@ -18,7 +18,7 @@ angular.module("newTaskApp").controller("RepairCtrl", function RepairCtrl($scope
     $scope.parts = [];
     console.log("Requesting the part list");
     if (window.$java) {
-        $scope.parts = window.$java.GetParts();
+        $scope.parts = JSON.parse(window.$java.GetParts());
     }
     else {
         console.log("No $java object!");
