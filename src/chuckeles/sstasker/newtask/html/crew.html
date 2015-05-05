@@ -1,0 +1,13 @@
+<h1>Posádka</h1>
+
+<form>
+  <select ng-model="member">
+    <option value="{{ $index }}" ng-repeat="member in crew">
+      {{ member.name }}
+    </option>
+  </select>
+
+  <button ng-click="next()">
+    ďalej <i class="ion-arrow-right-c"></i>
+  </button>
+</form>

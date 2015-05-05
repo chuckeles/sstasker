@@ -2,4 +2,5 @@
 declare class TaskInfo {
     type: string;
     part: number;
+    member: number;
 }

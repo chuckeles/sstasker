@@ -15,6 +15,11 @@ angular.module("newTaskApp")
       .state("repair", {
         templateUrl: "html/repair.html",
         controller: "RepairCtrl"
+      })
+
+      .state("crew", {
+        templateUrl: "html/crew.html",
+        controller: "CrewCtrl"
       });
 
   })
