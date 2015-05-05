@@ -1,5 +1,7 @@
 /// <reference path="def/angular.d.ts" />
 /// <reference path="def/angular-ui-router.d.ts" />
+/// <reference path="info.d.ts" />
+
 
 interface IJava {
   GetParts : Function
@@ -20,6 +22,7 @@ interface IPart {
 
 interface IRepairCtrlScope extends ng.IScope {
   parts : Array<IPart>;
+  part : string;
   next : Function;
 }
 
@@ -36,8 +39,15 @@ angular.module("newTaskApp")
 
   .controller("RepairCtrl", function RepairCtrl(
     $scope : IRepairCtrlScope,
-    $state : ng.ui.IStateService) {
+    $state : ng.ui.IStateService,
+    taskInfo : TaskInfo) {
     console.log("Repair state loaded");
+
+    $scope.part = null;
+    $scope.next = function () {
+      taskInfo.part = parseInt($scope.part);
+      $state.go("crew");
+    };
 
     $scope.parts = [];
     console.log("Requesting the part list");
