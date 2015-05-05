@@ -1,6 +1,7 @@
 button,
 input,
-select {
+select,
+textarea {
   margin: 1em;
 }
 
@@ -22,7 +23,9 @@ button {
   }
 }
 
-select {
+input,
+select,
+textarea {
   padding: .4em 1em;
 
   color: sscolor("dark", 2);

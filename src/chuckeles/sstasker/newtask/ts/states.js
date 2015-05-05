@@ -10,6 +10,9 @@ angular.module("newTaskApp").config(function StateConfig($stateProvider) {
     }).state("crew", {
         templateUrl: "html/crew.html",
         controller: "CrewCtrl"
+    }).state("details", {
+        templateUrl: "html/details.html",
+        controller: "DetailsCtrl"
     });
 }).run(function GoToTypeState($state) {
     $state.go("type");

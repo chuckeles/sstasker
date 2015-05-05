@@ -20,6 +20,11 @@ angular.module("newTaskApp")
       .state("crew", {
         templateUrl: "html/crew.html",
         controller: "CrewCtrl"
+      })
+
+      .state("details", {
+        templateUrl: "html/details.html",
+        controller: "DetailsCtrl"
       });
 
   })

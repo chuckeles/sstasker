@@ -4,6 +4,9 @@ class TaskInfo {
   type : string;
   part : number;
   member : number;
+
+  title : string;
+  description : string;
 }
 
 angular.module("newTaskApp")

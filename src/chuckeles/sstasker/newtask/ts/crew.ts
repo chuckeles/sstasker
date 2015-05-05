@@ -30,6 +30,9 @@ angular.module("newTaskApp")
 
     $scope.member = null;
     $scope.next = function() {
+      if (!$scope.member)
+        return;
+
       taskInfo.member = parseInt($scope.member);
       $state.go("details");
     };

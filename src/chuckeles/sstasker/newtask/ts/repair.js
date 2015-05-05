@@ -18,6 +18,8 @@ angular.module("newTaskApp").controller("RepairCtrl", function RepairCtrl($scope
     console.log("Repair state loaded");
     $scope.part = null;
     $scope.next = function () {
+        if (!$scope.part)
+            return;
         taskInfo.part = parseInt($scope.part);
         $state.go("crew");
     };

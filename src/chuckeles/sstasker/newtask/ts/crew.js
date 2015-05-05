@@ -14,6 +14,8 @@ angular.module("newTaskApp").controller("CrewCtrl", function CrewCtrl($scope, $s
     console.log("Crew state loaded");
     $scope.member = null;
     $scope.next = function () {
+        if (!$scope.member)
+            return;
         taskInfo.member = parseInt($scope.member);
         $state.go("details");
     };

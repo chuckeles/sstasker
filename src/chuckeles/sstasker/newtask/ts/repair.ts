@@ -45,6 +45,9 @@ angular.module("newTaskApp")
 
     $scope.part = null;
     $scope.next = function () {
+      if (!$scope.part)
+        return;
+
       taskInfo.part = parseInt($scope.part);
       $state.go("crew");
     };
