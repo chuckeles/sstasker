@@ -1,6 +1,8 @@
 package chuckeles.sstasker.system;
 
 import chuckeles.sstasker.model.Spaceship;
+import chuckeles.sstasker.model.crew.Engineer;
+import chuckeles.sstasker.model.tasks.RepairTask;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -50,7 +52,27 @@ public class JSBridge {
    */
   public void CreateTask(String taskInfo) {
     Window.Instance().HideNewTask();
-    Log.Instance().Log("Task Info: " + taskInfo);
+    Log.Instance().Log("Got the task info: " + taskInfo);
+
+    // convert to object
+    JSONObject taskInfoObject = new JSONObject(taskInfo);
+
+    // create task by type
+    switch (taskInfoObject.getString("type")) {
+
+    case "repair":
+      RepairTask task = new RepairTask(taskInfoObject.getString("title"));
+      task.SetDescription(taskInfoObject.getString("description"));
+      task.AddEngineer((Engineer) Spaceship.Instance().GetCrew().get(taskInfoObject.getInt("member")));
+      task.SetPart(Spaceship.Instance().GetParts().get(taskInfoObject.getInt("part")));
+
+      Spaceship.Instance().AddTask(task);
+      break;
+
+    default:
+      throw new IllegalArgumentException("Unknown type of the task");
+
+    }
   }
 
   //region Getters
