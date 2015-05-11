@@ -3,7 +3,7 @@
 class TaskInfo {
   type : string;
   part : number;
-  member : number;
+  members : Array<number>;
 
   title : string;
   description : string;

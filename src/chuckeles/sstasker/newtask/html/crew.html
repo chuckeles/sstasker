@@ -1,11 +1,15 @@
 <h1>Posádka</h1>
 
-<form>
-  <select ng-model="member">
-    <option value="{{ $index }}" ng-repeat="member in crew">
-      {{ member.name }}
-    </option>
-  </select>
+<form flex="column">
+  <!--<select ng-model="member">-->
+    <!--<option value="{{ $index }}" ng-repeat="member in crew">-->
+      <!--{{ member.name }}-->
+    <!--</option>-->
+  <!--</select>-->
+  <label ng-repeat="member in crew">
+    <input type="checkbox" name="$index" ng-disabled="member.type != 'Engineer'" ng-model="selected[$index]">
+    {{ member.name }} ({{ member.type }})
+  </label>
 
   <button ng-click="next()">
     ďalej <i class="ion-arrow-right-c"></i>

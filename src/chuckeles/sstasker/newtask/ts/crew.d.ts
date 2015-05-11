@@ -10,11 +10,12 @@ interface IJavaWindow extends Window {
 declare class Cosmonaut {
     name: string;
     description: string;
+    type: string;
     oxygen: number;
-    constructor(name: string, description: string, oxygen?: number);
+    constructor(name: string, description: string, type?: string, oxygen?: number);
 }
 interface ICrewCtrlScope extends ng.IScope {
     next: Function;
     crew: Array<Cosmonaut>;
-    member: string;
+    selected: Array<boolean>;
 }

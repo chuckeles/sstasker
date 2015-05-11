@@ -63,8 +63,11 @@ public class JSBridge {
     case "repair":
       RepairTask task = new RepairTask(taskInfoObject.getString("title"));
       task.SetDescription(taskInfoObject.getString("description"));
-      task.AddEngineer((Engineer) Spaceship.Instance().GetCrew().get(taskInfoObject.getInt("member")));
       task.SetPart(Spaceship.Instance().GetParts().get(taskInfoObject.getInt("part")));
+
+      JSONArray crew = taskInfoObject.getJSONArray("members");
+      for (int i = 0; i < crew.length(); ++i)
+        task.AddEngineer((Engineer)Spaceship.Instance().GetCrew().get(crew.getInt(i)));
 
       Spaceship.Instance().AddTask(task);
       break;
@@ -119,6 +122,7 @@ public class JSBridge {
         new JSONObject()
             .put("name", member.GetName())
             .put("description", member.GetDescription())
+            .put("type", member.GetType())
             .put("oxygen", member.GetOxygen() / Constants.MAX_OXYGEN_COSMONAUT)
     ));
 

@@ -11,13 +11,13 @@ interface IJavaWindow extends Window {
 }
 
 class Cosmonaut {
-  constructor(public name : string, public description : string, public oxygen : number = 1) {}
+  constructor(public name : string, public description : string, public type : string = "Engineer", public oxygen : number = 1) {}
 }
 
 interface ICrewCtrlScope extends ng.IScope {
   next : Function;
   crew : Array<Cosmonaut>;
-  member : string;
+  selected : Array<boolean>;
 }
 
 angular.module("newTaskApp")
@@ -28,16 +28,17 @@ angular.module("newTaskApp")
     taskInfo : TaskInfo) {
     console.log("Crew state loaded");
 
-    $scope.member = null;
     $scope.next = function() {
-      if (!$scope.member)
-        return;
+      taskInfo.members = [];
+      for (var i = 0; i < $scope.selected.length; ++i)
+        if ($scope.selected[i])
+          taskInfo.members.push(i);
 
-      taskInfo.member = parseInt($scope.member);
       $state.go("details");
     };
 
     $scope.crew = [];
+    $scope.selected = [];
     console.log("Requesting the crew list");
     if ((<IJavaWindow>window).$java) {
       $scope.crew = JSON.parse((<IJavaWindow>window).$java.GetCrew());
@@ -51,4 +52,6 @@ angular.module("newTaskApp")
         new Cosmonaut("Chuckeles", "Maestro")
       ];
     }
+    for (var i = 0; i < $scope.crew.length; ++i)
+      $scope.selected[i] = false;
   });

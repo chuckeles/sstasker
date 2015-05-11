@@ -83,6 +83,11 @@ public class Engineer extends Cosmonaut {
         "**nevie opraviť generátor**. Inžinieri sú tiež dosť neschopní čo sa týka pilotovania vesmírnej lodi.";
   }
 
+  @Override
+  public String GetType() {
+    return "Engineer";
+  }
+
   //endregion
 
   //endregion

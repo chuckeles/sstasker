@@ -94,6 +94,13 @@ public abstract class Cosmonaut {
   public abstract String GetDescription();
 
   /**
+   * Get the type of the cosmonaut.
+   *
+   * @return Type as a string
+   */
+  public abstract String GetType();
+
+  /**
    * Get the oxygen level of the cosmonaut.
    *
    * @return Oxygen level
