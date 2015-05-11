@@ -49,6 +49,7 @@ public class JSBridge {
    * @param taskInfo Info collected in the new task window
    */
   public void CreateTask(String taskInfo) {
+    Window.Instance().HideNewTask();
     Log.Instance().Log("Task Info: " + taskInfo);
   }
 

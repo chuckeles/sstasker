@@ -83,6 +83,13 @@ public class Window extends Application {
   }
 
   /**
+   * Hide the new task window.
+   */
+  public void HideNewTask() {
+    mNewTaskStage.hide();
+  }
+
+  /**
    * Close the application window.
    */
   public static void Close() {
