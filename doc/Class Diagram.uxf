@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>160</y>
+      <w>300</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>/Cosmonaut/
+--
++Cosmonaut(name: String)
+
+/+Update()/
++AddOxygen(oxygen: double)
++SubtractOxygen(oxygen: double)
+/+Repair(generator: Generator)/
+/+Repair(oxygenGenerator: OxygenGenerator)/
+
++GetName(): String
+/+GetDescription(): String/
+/+GetType(): String/
++GetOxygen(): double
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>490</y>
+      <w>300</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Engineer
+--
++Engineer(name: String)
+
++Update()
++Repair(generator: Generator)
++Repair(oxygenGenerator: OxygenGenerator)
+
++GetDescription(): String
++GetType(): String
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>370</y>
+      <w>30</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>500</x>
+      <y>100</y>
+      <w>380</w>
+      <h>610</h>
+    </coordinates>
+    <panel_attributes>Crew
+--
+bg=blue
+layer=-1
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>160</y>
+      <w>260</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Part
+--
++Update()
++Repair()
++GetRepaired(cosmonaut: Cosmonaut)
++Break()
+
++GetName(): String
++GetDescription(): String
++GetReliability(): double
++GetHealth(): double
++Works(): boolean
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>400</y>
+      <w>190</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>PartWithHealth
+--
++Update()
++AddHealth(health: double)
++SetHealth(health: double)
+
++GetHealth(): double
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1150</x>
+      <y>340</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=2</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>400</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>PartWithoutHealth
+--
++GetHealth(): double
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1400</x>
+      <y>340</y>
+      <w>90</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>970</x>
+      <y>660</y>
+      <w>260</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Generator
+--
++Update()
++Repair()
++GetRepaired(cosmonaut: Cosmonaut)
++Break()
++SubtractEnergy(energy: double)
+
++GetName(): String
++GetDescription(): String
++GetReliability(): double
++Works(): boolean
++GetEnergy(): double
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1090</x>
+      <y>500</y>
+      <w>30</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1390</x>
+      <y>660</y>
+      <w>260</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>OxygenGenerator
+--
++Update()
++Repair()
++GetRepaired(cosmonaut: Cosmonaut)
++Break()
++SubtractEnergy(energy: double)
+
++GetOxygen(): double
++GetName(): String
++GetDescription(): String
++GetReliability(): double
++Works(): boolean
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1500</x>
+      <y>440</y>
+      <w>30</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>930</x>
+      <y>100</y>
+      <w>760</w>
+      <h>810</h>
+    </coordinates>
+    <panel_attributes>Parts
+--
+bg=green
+layer=-1
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>160</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>/Task/
+--
++Task()
++Task(title: String)
+
++SetDescription(description: String)
++SetTitle(title: String)
+/+Update()/
+
++GetDescription(): String
++GetTitle(): String
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>430</y>
+      <w>370</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>RepairTask
+--
++RepairTask()
++RepairTask(title: String)
++RepairTask(title: String, engineer: Engineer, part: Part)
+
++Update()
++AddEngineer(engineer: Engineer)
++SetPart(part: Part)
+
++GetPart(): Part
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>330</y>
+      <w>30</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>100</y>
+      <w>450</w>
+      <h>550</h>
+    </coordinates>
+    <panel_attributes>Tasks
+--
+bg=yellow
+layer=-1
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>250</y>
+      <w>370</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=repairer
+m2=part to repair</panel_attributes>
+    <additional_attributes>10.0;10.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>550</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..*
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>50</y>
+      <w>830</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;380.0;130.0;10.0;600.0;10.0;810.0;150.0</additional_attributes>
+  </element>
+</diagram>
