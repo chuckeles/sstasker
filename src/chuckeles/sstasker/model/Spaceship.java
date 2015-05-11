@@ -5,9 +5,8 @@ import chuckeles.sstasker.model.crew.Engineer;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;
-import chuckeles.sstasker.system.Log;
-import chuckeles.sstasker.model.tasks.RepairTask;
 import chuckeles.sstasker.model.tasks.Task;
+import chuckeles.sstasker.system.Log;
 import chuckeles.sstasker.system.UpdateLog;
 
 import java.util.ArrayList;
@@ -94,13 +93,6 @@ public class Spaceship {
   private void InitRandomNew() {
     Log.Instance().Log("Initializing a new random spaceship");
 
-    // TODO: Remove
-    // add tasks
-    Log.Instance().Log("Adding the repair tasks");
-    RepairTask t = new RepairTask("Opravovanie Vesmírnej Lodi");
-    t.SetDescription("Naši inžinieri musia automaticky udržovať a opravovať všetky časti lode.");
-    mTasks.add(t);
-
     // add crew
     Log.Instance().Log("Adding crew");
     mCrew.add(new Engineer("Patričko"));
@@ -116,10 +108,6 @@ public class Spaceship {
     for (int i = 0, imax = (int)(Math.random() * 2) + 1; i < imax; ++i)
       mParts.add(new OxygenGenerator());
     Log.Instance().Log("Parts added: " + mParts.toString());
-
-    // configure the repair task
-    t.AddEngineer((Engineer)mCrew.get(0));
-    t.SetPart(mParts.get(0));
   }
 
   /**
