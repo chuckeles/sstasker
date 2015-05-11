@@ -59,7 +59,7 @@ public class RepairTask extends Task {
       return;
 
     // engineers! get to work!
-    mEngineers.forEach(engineer -> mPart.GetRepaired(engineer));
+    mEngineers.forEach(mPart::GetRepaired);
 
     // remove task if successful
     if (mPart.Works())

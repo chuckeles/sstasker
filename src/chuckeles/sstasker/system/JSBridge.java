@@ -43,6 +43,15 @@ public class JSBridge {
     Window.Instance().ShowNewTaskWindow();
   }
 
+  /**
+   * Create new task.
+   *
+   * @param taskInfo Info collected in the new task window
+   */
+  public void CreateTask(String taskInfo) {
+    Log.Instance().Log("Task Info: " + taskInfo);
+  }
+
   //region Getters
 
   /**

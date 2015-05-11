@@ -10,7 +10,15 @@ angular.module("newTaskApp").controller("DetailsCtrl", function DetailsCtrl($sco
             return;
         taskInfo.title = $scope.title;
         taskInfo.description = $scope.description;
-        console.log(taskInfo);
+        // create the task
+        if (window.$java) {
+            window.$java.CreateTask(JSON.stringify(taskInfo));
+        }
+        else {
+            console.log("If I had $java, I would create the task, but, well...");
+        }
+        // go to first state
+        $state.go("type");
     };
 });
 //# sourceMappingURL=details.js.map

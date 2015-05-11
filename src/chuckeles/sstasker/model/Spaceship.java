@@ -123,6 +123,15 @@ public class Spaceship {
   }
 
   /**
+   * Add new task.
+   *
+   * @param task Task to add
+   */
+  public void AddTask(Task task) {
+    mTasks.add(task);
+  }
+
+  /**
    * Remove a task. The task will be remove in the end of the update.
    *
    * @param task Task to remove
