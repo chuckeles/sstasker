@@ -1,9 +1,9 @@
-package chuckeles.sstasker.model;
+package chuckeles.sstasker.model.tasks;
 
 /**
  * A task with a name and a description. A task can have assigned crew members and inventory items.
  */
-public class Task {
+public abstract class Task {
 
   //region Constructor
 
@@ -44,6 +44,11 @@ public class Task {
   public void SetTitle(String title) {
     mTitle = title;
   }
+
+  /**
+   * Update the task.
+   */
+  public abstract void Update();
 
   //region Getters
 

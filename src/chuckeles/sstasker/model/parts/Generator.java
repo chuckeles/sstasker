@@ -3,6 +3,7 @@ package chuckeles.sstasker.model.parts;
 import chuckeles.sstasker.model.crew.Cosmonaut;
 import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.Log;
+import chuckeles.sstasker.system.UpdateLog;
 
 /**
  * Power generator. Provides power for the spaceship. Produces infinite amount of power as long as it is functional.
@@ -17,7 +18,9 @@ public class Generator extends PartWithHealth {
   public void Update() {
     if (!Works()) {
       Log.Instance().Log("Generator updated but it is broken," +
-          " energy: " + (int)(mEnergy / mMaxEnergy * 100) + "%");
+          " energy: " + (int) (mEnergy / mMaxEnergy * 100) + "%");
+      UpdateLog.Instance().WriteLn("Generátor je pokazený, energia: " +
+          (int) (mEnergy / mMaxEnergy * 100) + "%");
       return;
     }
 
@@ -37,6 +40,10 @@ public class Generator extends PartWithHealth {
         " reliability: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
         ", energy: " + (int)(mEnergy / mMaxEnergy * 100) + "%" +
         ", works: " + mWorks);
+    UpdateLog.Instance().WriteLn("Generátor aktualizovaný," +
+        " spolahlivosť: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
+        ", energia: " + (int)(mEnergy / mMaxEnergy * 100) + "%" +
+        ", funguje: " + (mWorks ? "áno" : "nie"));
   }
 
   @Override
@@ -72,6 +79,21 @@ public class Generator extends PartWithHealth {
   @Override
   public String GetName() {
     return "Generátor";
+  }
+
+  @Override
+  public String GetDescription() {
+    // TODO: Move to some txt file
+    return "Tento generátor generuje elektrickú energiu potrebnú na beh väčšiny častí na lodi. " +
+        "Generátor vnútri obsahuje akumulátor o veľkosti **" + mMaxEnergy + " A**. Časti lode odoberajú energiu " +
+        "z tohoto akumulátora. Ak sa vyčerpá, znamená to, že loď spotrebúva príliš veľa energie (alebo " +
+        "že generátor momentálne nefunguje). \n\n" +
+        "Nikto poriadne nevie, ako vlastne tento generátor funguje. Niektorí vedci majú podozrenie, " +
+        "že to má niečo spoločné so štiepením antihmoty, ale táto oblasť ešte nie je vedecky známa. " +
+        "Všetko čo teraz vieme je že to proste funguje a to nám stačí. \n\n" +
+        "Na to, aby mohol kozmonaut tento generátor opraviť, potrebuje špecializáciu - **Milovník Generátorov**. " +
+        "Ale aj kozmonaut s touto špecializáciou má iba malú šancu generátor opraviť, práve kvôli jeho zložitej " +
+        "a nepochopenej štruktúre. Kozmonauti bez špecializácie s generátorom ani nepohnú.";
   }
 
   @Override

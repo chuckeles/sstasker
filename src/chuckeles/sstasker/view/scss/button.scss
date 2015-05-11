@@ -22,6 +22,10 @@
     box-shadow: $button-press-shadow;
   }
 
+  &.button-full {
+    width: 100%;
+  }
+
   &.raw {
     display: inline-block;
 

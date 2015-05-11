@@ -18,8 +18,9 @@ public class Main {
    */
   public static void main(String[] args) {
 
-    Log.Instance().Log("SSTasker is starting");
-    Log.Instance().WriteLn();
+    Log.Instance()
+        .Log("SSTasker is starting")
+        .WriteLn();
 
     Log.Instance().Log("Initializing the spaceship");
     Spaceship.Instance().Initialize();
@@ -27,8 +28,9 @@ public class Main {
     Log.Instance().Log("Launching the application");
     Application.launch(Window.class, args);
 
-    Log.Instance().WriteLn();
-    Log.Instance().Log("SSTasker is ending");
+    Log.Instance()
+        .WriteLn()
+        .Log("SSTasker is ending");
 
   }
 

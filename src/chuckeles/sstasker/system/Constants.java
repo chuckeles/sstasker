@@ -10,12 +10,22 @@ public class Constants {
   /**
    * Window minimum width.
    */
-  public static final int WINDOW_MIN_WIDTH = 800;
+  public static final int WINDOW_MIN_WIDTH = 1200;
 
   /**
    * Window minimum height.
    */
-  public static final int WINDOW_MIN_HEIGHT = 600;
+  public static final int WINDOW_MIN_HEIGHT = 800;
+
+  /**
+   * New task window minimum width.
+   */
+  public static final int WINDOW_NEW_TASK_MIN_WIDTH = 600;
+
+  /**
+   * New task window minimum height.
+   */
+  public static final int WINDOW_NEW_TASK_MIN_HEIGHT = 800;
 
   /**
    * Default max stack size of an item.

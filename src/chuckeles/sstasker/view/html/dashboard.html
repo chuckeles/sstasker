@@ -2,44 +2,65 @@
 
 <div class="panel small">
   <div class="header">
-    <h3>Úlohy</h3>
+    <h3><i class="ion-alert"></i> Úlohy</h3>
   </div>
 
   <ul class="unstyled">
     <li ng-repeat="task in tasks">
-      {{ task.title }}
+      <button class="button button-full" ng-click="show(task)">{{ task.title }}</button>
     </li>
   </ul>
 </div>
 
 <div class="panel">
   <div class="header">
-    <h3>Detaily</h3>
+    <h3><i class="ion-ios-information"></i> Detaily</h3>
   </div>
+
+  <h4>{{ details.name || details.title }}</h4>
+  <div marked="details.description"></div>
+
+  <h4 ng-show="details">Štatistiky</h4>
+  <p ng-show="details.oxygen">Kyslík: {{ details.oxygen * 100 | number: 2 }}%</p>
+  <p ng-show="details.health">Zdravie / Výdrž: {{ details.health * 100 | number: 2 }}%</p>
+  <p ng-show="details.reliability">Spolahlivosť: {{ details.reliability * 100 | number: 2 }}%</p>
+  <p ng-show="details.works !== undefined">
+    Funguje:
+    <span ng-show="details.works">
+      <i class="ion-checkmark-round"></i>
+    </span>
+    <span ng-show="!details.works">
+      <i class="ion-close-round"></i>
+    </span>
+  </p>
 </div>
 
 <div class="panel-group flex column">
   <div class="panel small flex-auto">
     <div class="header">
-      <h3>Posádka</h3>
+      <h3><i class="ion-android-person"></i> Posádka</h3>
     </div>
 
     <ul class="unstyled">
       <li ng-repeat="member in crew">
-        {{ member.name }}
+        <button class="button button-full" ng-click="show(member)">{{ member.name }}</button>
       </li>
     </ul>
   </div>
 
   <div class="panel small flex-auto">
     <div class="header">
-      <h3>Časti</h3>
+      <h3><i class="ion-ios-box"></i> Časti</h3>
     </div>
 
     <ul class="unstyled">
       <li ng-repeat="part in parts">
-        {{ part.name }}
+        <button class="button button-full" ng-click="show(part)">{{ part.name }}</button>
       </li>
     </ul>
   </div>
 </div>
+
+<p id="updateToast" class="toast">
+  <i class="ion-checkmark-round"></i> Vesmírna loď aktualizovaná
+</p>

@@ -1,6 +1,8 @@
 package chuckeles.sstasker.system;
 
 import chuckeles.sstasker.model.Spaceship;
+import chuckeles.sstasker.model.crew.Engineer;
+import chuckeles.sstasker.model.tasks.RepairTask;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -35,7 +37,61 @@ public class JSBridge {
     Window.Close();
   }
 
+  /**
+   * Show the new task.
+   */
+  public void NewTask() {
+    Log.Instance().Log("Showing the new task window");
+    Window.Instance().ShowNewTaskWindow();
+  }
+
+  /**
+   * Create new task.
+   *
+   * @param taskInfo Info collected in the new task window
+   */
+  public void CreateTask(String taskInfo) {
+    Window.Instance().HideNewTask();
+    Log.Instance().Log("Got the task info: " + taskInfo);
+
+    // convert to object
+    JSONObject taskInfoObject = new JSONObject(taskInfo);
+
+    // create task by type
+    switch (taskInfoObject.getString("type")) {
+
+    case "repair":
+      RepairTask task = new RepairTask(taskInfoObject.getString("title"));
+      task.SetDescription(taskInfoObject.getString("description"));
+      task.SetPart(Spaceship.Instance().GetParts().get(taskInfoObject.getInt("part")));
+
+      JSONArray crew = taskInfoObject.getJSONArray("members");
+      for (int i = 0; i < crew.length(); ++i)
+        task.AddEngineer((Engineer)Spaceship.Instance().GetCrew().get(crew.getInt(i)));
+
+      Spaceship.Instance().AddTask(task);
+      break;
+
+    default:
+      throw new IllegalArgumentException("Unknown type of the task");
+
+    }
+  }
+
   //region Getters
+
+  /**
+   * Get the log of the last update cycle of the spaceship.
+   *
+   * @return Update log
+   */
+  public String GetUpdateLog() {
+    JSONArray a = new JSONArray();
+
+    UpdateLog.Instance().GetLog().forEach(a::put);
+
+    return a.toString();
+  }
 
   /**
    * Get the list of tasks.
@@ -65,6 +121,9 @@ public class JSBridge {
     Spaceship.Instance().GetCrew().forEach(member -> a.put(
         new JSONObject()
             .put("name", member.GetName())
+            .put("description", member.GetDescription())
+            .put("type", member.GetType())
+            .put("oxygen", member.GetOxygen() / Constants.MAX_OXYGEN_COSMONAUT)
     ));
 
     return a.toString();
@@ -81,8 +140,9 @@ public class JSBridge {
     Spaceship.Instance().GetParts().forEach(part -> a.put(
         new JSONObject()
             .put("name", part.GetName())
-            .put("health", part.GetHealth())
-            .put("reliability", part.GetReliability())
+            .put("description", part.GetDescription())
+            .put("health", part.GetHealth() / Constants.MAX_PART_HEALTH)
+            .put("reliability", part.GetReliability() / Constants.MAX_PART_RELIABILITY)
             .put("works", part.Works())
     ));
 

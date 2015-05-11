@@ -44,6 +44,13 @@ public interface Part {
   String GetName();
 
   /**
+   * Get the description of the part.
+   *
+   * @return The description of the part
+   */
+  String GetDescription();
+
+  /**
    * Get the reliability of the part, that is the chance that the part will not break.
    *
    * @return The reliability of the part

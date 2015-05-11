@@ -1,0 +1,19 @@
+.toast {
+  position: absolute;
+  z-index: 1;
+  bottom: .2em;
+  left: 1.2em;
+
+  padding: $padding-small;
+
+  transition: transform $transition-time;
+  transform: translateY(6em);
+
+  color: sscolor("light");
+  border-radius: $border-radius;
+  background-color: sscolor("dark", 1);
+
+  &.active {
+    transform: translateY(0);
+  }
+}

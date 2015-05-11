@@ -19,9 +19,9 @@
     flex: auto;
   }
 
-  @for $i from 1 through 8 {
+  @for $i from 10 through 100 {
     &-#{$i} {
-      flex: $i;
+      flex: 0 0 ($i + 0%);
     }
   }
 

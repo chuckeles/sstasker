@@ -6,6 +6,9 @@ import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;
 import chuckeles.sstasker.system.Log;
+import chuckeles.sstasker.model.tasks.RepairTask;
+import chuckeles.sstasker.model.tasks.Task;
+import chuckeles.sstasker.system.UpdateLog;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +19,8 @@ import java.util.List;
  * crew members and inventory items.
  */
 public class Spaceship {
+
+  private Spaceship() {}
 
   //region Methods
 
@@ -45,19 +50,23 @@ public class Spaceship {
    */
   public void Update() {
     Log.Instance().Log("Updating the spaceship");
+
+    UpdateLog.Instance()
+        .Clear()
+        .WriteLn("Aktualizujem vesmírnu loď")
+        .WriteLn();
+
     mParts.forEach(part -> part.Update());
     mCrew.forEach(cosmonaut -> cosmonaut.Update());
-    // TODO: Update tasks
+    mTasks.forEach(task -> task.Update());
 
-    // command the crew to maintain and repair parts
-    // TODO: Remove (must be done via tasks)
-    mParts.forEach(part -> {
-      if (!part.Works())
-        mCrew.forEach(cosmonaut -> {
-          if (!part.Works())
-            part.GetRepaired(cosmonaut);
-        });
-    });
+    UpdateLog.Instance()
+        .WriteLn()
+        .WriteLn("Loď aktualizovaná");
+
+    Log.Instance().Log("Removing tasks");
+    mTasksToRemove.forEach(task -> mTasks.remove(task));
+    mTasksToRemove.clear();
   }
 
   /**
@@ -87,8 +96,10 @@ public class Spaceship {
 
     // TODO: Remove
     // add tasks
-    Log.Instance().Log("Adding the maintanance task");
-    mTasks.add(new Task("Udržovanie Vesmírnej Lodi"));
+    Log.Instance().Log("Adding the repair tasks");
+    RepairTask t = new RepairTask("Opravovanie Vesmírnej Lodi");
+    t.SetDescription("Naši inžinieri musia automaticky udržovať a opravovať všetky časti lode.");
+    mTasks.add(t);
 
     // add crew
     Log.Instance().Log("Adding crew");
@@ -100,9 +111,34 @@ public class Spaceship {
 
     // add parts
     Log.Instance().Log("Adding parts to spaceship");
-    mParts.add(new Generator());
-    mParts.add(new OxygenGenerator());
+    for (int i = 0, imax = (int)(Math.random() * 4) + 1; i < imax; ++i)
+      mParts.add(new Generator());
+    for (int i = 0, imax = (int)(Math.random() * 2) + 1; i < imax; ++i)
+      mParts.add(new OxygenGenerator());
     Log.Instance().Log("Parts added: " + mParts.toString());
+
+    // configure the repair task
+    t.AddEngineer((Engineer)mCrew.get(0));
+    t.SetPart(mParts.get(0));
+  }
+
+  /**
+   * Add new task.
+   *
+   * @param task Task to add
+   */
+  public void AddTask(Task task) {
+    mTasks.add(task);
+  }
+
+  /**
+   * Remove a task. The task will be remove in the end of the update.
+   *
+   * @param task Task to remove
+   * @see #Update()
+   */
+  public void RemoveTask(Task task) {
+    mTasksToRemove.add(task);
   }
 
   //region Getters
@@ -151,6 +187,11 @@ public class Spaceship {
    * The list of tasks.
    */
   private ArrayList<Task> mTasks = new ArrayList<>();
+
+  /**
+   * Internal list of tasks to remove.
+   */
+  private ArrayList<Task> mTasksToRemove = new ArrayList<>();
 
   /**
    * The list of crew members.
