@@ -11,7 +11,7 @@ angular.module("sstasker")
         $scope.details = item;
       else
         $scope.details = null;
-    }
+    };
 
     $scope.update = function() {
       // request update
@@ -23,7 +23,6 @@ angular.module("sstasker")
         console.log("No $java object!");
 
       // update lists
-      $scope.getLists();
       $scope.details = null;
 
       // show toast
@@ -58,18 +57,18 @@ angular.module("sstasker")
     };
 
     $scope.getLists = function() {
-      console.log("Requesting the spaceship lists");
+      // console.log("Requesting the spaceship lists");
       if (window.$java) {
 
         // request data from the app
         $scope.tasks = JSON.parse(window.$java.GetTasks());
         $scope.crew = JSON.parse(window.$java.GetCrew());
         $scope.parts = JSON.parse(window.$java.GetParts());
-        console.log("Got them, sizes: " +
-          $scope.tasks.length + ", " +
-          $scope.crew.length + ", " +
-          $scope.parts.length
-        );
+        // console.log("Got them, sizes: " +
+        //   $scope.tasks.length + ", " +
+        //   $scope.crew.length + ", " +
+        //   $scope.parts.length
+        // );
 
       }
       else {
@@ -97,6 +96,9 @@ angular.module("sstasker")
         }];
 
       }
+
+      // update later again
+      $timeout($scope.getLists, 1000);
     };
     $scope.getLists();
 
@@ -104,8 +106,6 @@ angular.module("sstasker")
       if (window.$java) {
         console.log("Requesting the creation of a new task");
         window.$java.NewTask();
-
-        $scope.getLists();
       }
       else {
         $scope.tasks.push({
