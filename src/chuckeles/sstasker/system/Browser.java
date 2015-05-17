@@ -18,7 +18,8 @@ public class Browser extends Region {
 
   /**
    * Create new browser.
-   * @param indexFile
+   *
+   * @param indexFile Index.html file for this browser
    */
   public Browser(String indexFile) {
     getChildren().add(mBrowser);
