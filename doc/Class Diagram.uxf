@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>3</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>160</y>
-      <w>300</w>
-      <h>220</h>
+      <x>639</x>
+      <y>618</y>
+      <w>90</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>/Cosmonaut/
 --
@@ -23,16 +23,16 @@
 /+GetDescription(): String/
 /+GetType(): String/
 +GetOxygen(): double
-group=1</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>490</y>
-      <w>300</w>
-      <h>180</h>
+      <x>639</x>
+      <y>717</y>
+      <w>90</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>Engineer
 --
@@ -44,43 +44,43 @@ group=1</panel_attributes>
 
 +GetDescription(): String
 +GetType(): String
-group=1</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>370</y>
-      <w>30</w>
-      <h>140</h>
+      <x>681</x>
+      <y>681</y>
+      <w>9</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-group=1</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>500</x>
-      <y>100</y>
-      <w>380</w>
-      <h>610</h>
+      <x>627</x>
+      <y>600</y>
+      <w>114</w>
+      <h>183</h>
     </coordinates>
     <panel_attributes>Crew
 --
 bg=blue
 layer=-1
-group=1</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1180</x>
-      <y>160</y>
-      <w>260</w>
-      <h>190</h>
+      <x>831</x>
+      <y>618</y>
+      <w>78</w>
+      <h>57</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 Part
@@ -95,16 +95,16 @@ Part
 +GetReliability(): double
 +GetHealth(): double
 +Works(): boolean
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>400</y>
-      <w>190</w>
-      <h>110</h>
+      <x>780</x>
+      <y>690</y>
+      <w>57</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>PartWithHealth
 --
@@ -113,54 +113,54 @@ group=2</panel_attributes>
 +SetHealth(health: double)
 
 +GetHealth(): double
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1150</x>
-      <y>340</y>
-      <w>80</w>
-      <h>80</h>
+      <x>822</x>
+      <y>672</y>
+      <w>24</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes>60.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1430</x>
-      <y>400</y>
-      <w>150</w>
-      <h>50</h>
+      <x>906</x>
+      <y>690</y>
+      <w>45</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>PartWithoutHealth
 --
 +GetHealth(): double
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1400</x>
-      <y>340</y>
-      <w>90</w>
-      <h>80</h>
+      <x>897</x>
+      <y>672</y>
+      <w>27</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>970</x>
-      <y>660</y>
-      <w>260</w>
-      <h>210</h>
+      <x>768</x>
+      <y>768</y>
+      <w>78</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Generator
 --
@@ -175,28 +175,28 @@ group=2</panel_attributes>
 +GetReliability(): double
 +Works(): boolean
 +GetEnergy(): double
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1090</x>
-      <y>500</y>
-      <w>30</w>
-      <h>180</h>
+      <x>804</x>
+      <y>720</y>
+      <w>9</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1390</x>
-      <y>660</y>
-      <w>260</w>
-      <h>210</h>
+      <x>894</x>
+      <y>768</y>
+      <w>78</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>OxygenGenerator
 --
@@ -211,43 +211,43 @@ group=2</panel_attributes>
 +GetDescription(): String
 +GetReliability(): double
 +Works(): boolean
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1500</x>
-      <y>440</y>
-      <w>30</w>
-      <h>240</h>
+      <x>927</x>
+      <y>702</y>
+      <w>9</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>930</x>
-      <y>100</y>
-      <w>760</w>
-      <h>810</h>
+      <x>756</x>
+      <y>600</y>
+      <w>228</w>
+      <h>243</h>
     </coordinates>
     <panel_attributes>Parts
 --
 bg=green
 layer=-1
-group=2</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>160</y>
-      <w>240</w>
-      <h>180</h>
+      <x>507</x>
+      <y>618</y>
+      <w>72</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>/Task/
 --
@@ -260,16 +260,16 @@ group=2</panel_attributes>
 
 +GetDescription(): String
 +GetTitle(): String
-group=3</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>430</y>
-      <w>370</w>
-      <h>180</h>
+      <x>489</x>
+      <y>699</y>
+      <w>111</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>RepairTask
 --
@@ -282,73 +282,511 @@ group=3</panel_attributes>
 +SetPart(part: Part)
 
 +GetPart(): Part
-group=3</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>330</y>
-      <w>30</w>
-      <h>120</h>
+      <x>540</x>
+      <y>669</y>
+      <w>9</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-group=3</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>0</x>
-      <y>100</y>
-      <w>450</w>
-      <h>550</h>
+      <x>477</x>
+      <y>600</y>
+      <w>135</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>Tasks
 --
 bg=yellow
 layer=-1
-group=3</panel_attributes>
+group=4</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>250</y>
-      <w>370</w>
-      <h>40</h>
+      <x>726</x>
+      <y>645</y>
+      <w>111</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=repairer
-m2=part to repair</panel_attributes>
+m2=part to repair
+group=4</panel_attributes>
     <additional_attributes>10.0;10.0;350.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>550</y>
-      <w>160</w>
-      <h>40</h>
+      <x>597</x>
+      <y>735</y>
+      <w>48</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=0..*
-m2=1..*</panel_attributes>
+m2=1..*
+group=4</panel_attributes>
     <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>50</y>
-      <w>830</w>
-      <h>400</h>
+      <x>588</x>
+      <y>585</y>
+      <w>276</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=0..*
+m2=1
+group=4</panel_attributes>
+    <additional_attributes>10.0;380.0;10.0;10.0;900.0;10.0;900.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>453</x>
+      <y>408</y>
+      <w>51</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Item
+--
++Item(name: String)
+
++GetName(): String
++GetMaxStackSize(): int
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>453</y>
+      <w>57</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>HeavyItem
+--
++HeavyItem(name: String)
+
++GetMaxStackSize(): int
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>435</y>
+      <w>9</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>414</y>
+      <w>69</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>ItemStack
+--
++ItemStack(item: Item)
++ItemStack(item: Item, number: int)
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>501</x>
+      <y>423</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+group=4</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>453</y>
+      <w>69</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Inventory
+--
++Add(stack: ItemStack)
+
++GetStacks(): List&lt;ItemStack&gt;
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>561</x>
+      <y>429</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+group=4</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>666</x>
+      <y>462</y>
+      <w>108</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Spaceship
+--
+-Spaceship()
+
+_+Instance(): Spaceship_
+
++Initialize()
++Update()
++InstallPart(part: Part)
+-Load(): boolean
+-InitNewRandom()
++AddTask(task: Task)
++RemoveTask(task: Task)
+
++GetTasks(): ArrayList&lt;Task&gt;
++GetCrew(): ArrayList&lt;Cosmonaut&gt;
++GetParts(): ArrayList&lt;Part&gt;
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>597</x>
+      <y>471</y>
+      <w>75</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+group=4</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>549</x>
+      <y>540</y>
+      <w>123</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+group=4</panel_attributes>
+    <additional_attributes>390.0;10.0;10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>717</x>
+      <y>549</y>
+      <w>15</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>771</x>
+      <y>540</y>
+      <w>120</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;10.0;360.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>429</x>
+      <y>390</y>
+      <w>597</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>Model
+--
+bg=orange
+layer=-2
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>702</x>
+      <y>291</y>
+      <w>45</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+Main
+--
+_+main(args: String[])_
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>195</y>
+      <w>57</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Log
+--
+-Log()
+
+_+Instance(): Log_
++Log(text: String): Log
++Write(text: String): Log
++WriteLn(): Log
++WriteLn(text: String): Log
++WriteTime(): Log
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>240</y>
+      <w>9</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+group=5</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>303</y>
+      <w>9</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;530.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>783</x>
+      <y>273</y>
+      <w>99</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Window
+--
+_+Instance(): Window_
++start(primaryStage: Stage)
++InitNewTaskWindow()
++ShowNewTaskWindow()
++CloseNewTaskWindow()
++HideNewTask()
+_+Close()_
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>297</y>
+      <w>45</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+group=5</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>219</y>
+      <w>57</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>Browser
+--
++Browser(indexFile: String)
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>828</x>
+      <y>231</y>
+      <w>12</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=2
+group=5</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>558</x>
+      <y>258</y>
+      <w>102</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+Constants
+--
+_WINDOW_MIN_WIDTH: int_
+_WINDOW_MIN_HEIGHT: int_
+_WINDOW_NEW_TASK_MIN_WIDTH: int_
+_WINDOW_NEW_TASK_MIN_HEIGHT: int_
+_MAX_STACK_SIZE: int_
+_MAX_HEAVY_STACK_SIZE: int_
+_MAX_INVENTORY_SIZE: int_
+_MAX_PART_HEALTH: double_
+_MAX_PART_RELIABILITY: double_
+_MAX_OXYGEN_COSMONAUT: double_
+_OXYGEN_CONSUMPTION_COSMONAUT: double_
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>909</x>
+      <y>276</y>
+      <w>66</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>UpdateLog
+--
+-UpdateLog()
+
+_+Instance(): UpdateLog_
++Write(text: String): UpdateLog
++WriteLn(): UpdateLog
++WriteLn(text: String): UpdateLog
++Clear(): UpdateLog
+
++GetLog(): List&lt;String&gt;
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>771</x>
+      <y>324</y>
+      <w>177</w>
+      <h>159</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;380.0;130.0;10.0;600.0;10.0;810.0;150.0</additional_attributes>
+    <additional_attributes>570.0;10.0;570.0;500.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>801</x>
+      <y>123</y>
+      <w>63</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>JSBridge
+--
++Log(text: String)
++Update()
++Exit()
++NewTask()
++CreateTask(taskInfo: String)
+
++GetUpdateLog(): String
++GetTasks(): String
++GetCrew(): String
++GetParts(): String
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>828</x>
+      <y>177</y>
+      <w>9</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+group=5</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>543</x>
+      <y>102</y>
+      <w>447</w>
+      <h>237</h>
+    </coordinates>
+    <panel_attributes>System
+--
+bg=cyan
+layer=-1
+group=5</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
