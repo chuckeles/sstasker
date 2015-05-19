@@ -6,6 +6,7 @@ import chuckeles.sstasker.model.crew.GeneratorLover;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;
+import chuckeles.sstasker.model.parts.Wheel;
 import chuckeles.sstasker.model.tasks.Task;
 import chuckeles.sstasker.system.Log;
 import chuckeles.sstasker.system.UpdateLog;
@@ -104,10 +105,14 @@ public class Spaceship {
 
     // add parts
     Log.Instance().Log("Adding parts to spaceship");
+
     for (int i = 0, imax = (int)(Math.random() * 4) + 1; i < imax; ++i)
       mParts.add(new Generator());
     for (int i = 0, imax = (int)(Math.random() * 2) + 1; i < imax; ++i)
       mParts.add(new OxygenGenerator());
+
+    mParts.add(new Wheel());
+
     Log.Instance().Log("Parts added: " + mParts.toString());
   }
 

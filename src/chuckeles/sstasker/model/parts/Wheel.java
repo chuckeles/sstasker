@@ -20,7 +20,7 @@ public class Wheel extends PartWithoutHealth {
   public void Update() {
     if (!Works()) {
       Log.Instance().Log("Wheel updated but it is broken");
-      UpdateLog.Instance().WriteLn("W.H.E.E.L. je pokazenı");
+      UpdateLog.Instance().WriteLn("W.H.E.E.L. je pokazenÃ½");
 
       // TODO: Damage crew (the ship is uncontrollable!)
       return;
@@ -49,9 +49,9 @@ public class Wheel extends PartWithoutHealth {
     Log.Instance().Log("Wheel updated," +
         " reliability: " + (int)(mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
         ", works: " + mWorks);
-    UpdateLog.Instance().WriteLn("W.H.E.E.L. aktualizovanı," +
-        " spolahlivos: " + (int) (mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
-        ", funguje: " + (mWorks ? "áno" : "nie"));
+    UpdateLog.Instance().WriteLn("W.H.E.E.L. aktualizovanÃ½," +
+        " spolahlivosÅ¥: " + (int) (mReliability / Constants.MAX_PART_RELIABILITY * 100) + "%" +
+        ", funguje: " + (mWorks ? "Ã¡no" : "nie"));
   }
 
   @Override
@@ -78,9 +78,9 @@ public class Wheel extends PartWithoutHealth {
 
   @Override
   public String GetDescription() {
-    return "Takzvanı W.H.E.E.L. je riadiaci systém ktorı sa pouíva na ovládanie vesmírnej lode. " +
-        "Skladá sa hlavne z jedného ve¾kého otoèného \"kolesa\", ktoré je upevnené na ovládacom paneli. " +
-        "Na tomto panely sa nachádza snáï milión rôznych gombíkov, ktorım rozumie iba ve¾mi málo ¾udí.";
+    return "TakzvanÃ½ W.H.E.E.L. je riadiaci systÃ©m ktorÃ½ sa pouÅ¾Ã­va na ovlÃ¡danie vesmÃ­rnej lode. " +
+        "SkladÃ¡ sa hlavne z jednÃ©ho veÄ¾kÃ©ho otoÄnÃ©ho \"kolesa\", ktorÃ© je upevnenÃ© na ovlÃ¡dacom paneli. " +
+        "Na tomto panely sa nachÃ¡dza snÃ¡Ä miliÃ³n rÃ´znych gombÃ­kov, ktorÃ½m rozumie iba veÄ¾mi mÃ¡lo Ä¾udÃ­.";
   }
 
   @Override

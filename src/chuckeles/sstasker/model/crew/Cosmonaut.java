@@ -3,6 +3,7 @@ package chuckeles.sstasker.model.crew;
 import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
+import chuckeles.sstasker.model.parts.Wheel;
 import chuckeles.sstasker.system.Constants;
 
 /**
@@ -72,6 +73,14 @@ public abstract class Cosmonaut {
    * @see OxygenGenerator
    */
   public abstract void Repair(OxygenGenerator oxygenGenerator);
+
+  /**
+   * Make the cosmonaut repair a wheel.
+   *
+   * @param wheel Wheel to repair
+   * @see Wheel
+   */
+  public abstract void Repair(Wheel wheel);
 
   //endregion
 

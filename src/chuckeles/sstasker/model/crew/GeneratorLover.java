@@ -3,6 +3,7 @@ package chuckeles.sstasker.model.crew;
 import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
+import chuckeles.sstasker.model.parts.Wheel;
 import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.Log;
 import chuckeles.sstasker.system.UpdateLog;
@@ -94,6 +95,18 @@ public class GeneratorLover extends Engineer {
     Log.Instance().Log("Generator lover " + GetName() + " refuses to touch anything else than a generator");
     UpdateLog.Instance().WriteLn("Milovník generátorov " + GetName() + " sa odmieta čo i len pozrieť na generátor " +
         "kyslíka, miluje predsa iba generátor, nič iné");
+  }
+
+  @Override
+  public void Repair(Wheel wheel) {
+    if (!mAlive) {
+      UpdateLog.Instance().WriteLn("Milovník generátorov " + GetName() + " by rád niečo opravoval, ale je mŕtvy");
+      return;
+    }
+
+    Log.Instance().Log("Generator lover " + GetName() + " refuses to touch anything else than a generator");
+    UpdateLog.Instance().WriteLn("Milovník generátorov " + GetName() + " sa odmieta čo i len pozrieť na W.H.E.E.L., " +
+        "miluje predsa iba generátor, nič iné");
   }
 
   //region Getters

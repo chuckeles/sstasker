@@ -3,6 +3,7 @@ package chuckeles.sstasker.model.crew;
 import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
+import chuckeles.sstasker.model.parts.Wheel;
 import chuckeles.sstasker.system.Constants;
 import chuckeles.sstasker.system.Log;
 import chuckeles.sstasker.system.UpdateLog;
@@ -91,6 +92,26 @@ public class Engineer extends Cosmonaut {
     else {
       Log.Instance().Log("Engineer " + GetName() + " tried to repair the oxygen generator but failed miserably");
       UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " skúsil opraviť generátor kyslíka ale " +
+          "nejak mu to nevydalo");
+    }
+  }
+
+  @Override
+  public void Repair(Wheel wheel) {
+    if (!mAlive) {
+      UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " by rád niečo opravoval, ale je mŕtvy");
+      return;
+    }
+
+    // try to repair the wheel
+    if (Math.random() < 0.3) {
+      wheel.Repair();
+      Log.Instance().Log("Engineer " + GetName() + " repaired the wheel");
+      UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " opravil W.H.E.E.L.");
+    }
+    else {
+      Log.Instance().Log("Engineer " + GetName() + " tried to repair the wheel but failed miserably");
+      UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " skúsil opraviť W.H.E.E.L. ale " +
           "nejak mu to nevydalo");
     }
   }
