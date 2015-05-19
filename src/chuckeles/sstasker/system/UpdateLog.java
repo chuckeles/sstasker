@@ -29,6 +29,7 @@ public class UpdateLog {
    * Log a string.
    *
    * @param text String to log
+   * @return Singleton instance
    */
   public UpdateLog Write(String text) {
     mCurrentLine += text;
@@ -38,6 +39,8 @@ public class UpdateLog {
 
   /**
    * Write a new line to the log.
+   *
+   * @return Singleton instance
    */
   public UpdateLog WriteLn() {
     mLog.add(mCurrentLine);
@@ -50,6 +53,7 @@ public class UpdateLog {
    * Log a string and add a new line.
    *
    * @param text String to log
+   * @return Singleton instance
    */
   public UpdateLog WriteLn(String text) {
     Write(text);
@@ -61,7 +65,7 @@ public class UpdateLog {
   /**
    * Clear the log.
    *
-   * @return
+   * @return Singleton instance
    */
   public UpdateLog Clear() {
     mLog.clear();

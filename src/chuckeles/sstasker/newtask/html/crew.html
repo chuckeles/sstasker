@@ -7,7 +7,7 @@
     <!--</option>-->
   <!--</select>-->
   <label ng-repeat="member in crew">
-    <input type="checkbox" name="$index" ng-disabled="member.type != 'Engineer'" ng-model="selected[$index]">
+    <input type="checkbox" name="$index" ng-disabled="member.type != 'Engineer' && member.type != 'GeneratorLover'" ng-model="selected[$index]">
     {{ member.name }} ({{ member.type }})
   </label>
 

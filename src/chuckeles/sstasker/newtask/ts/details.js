@@ -1,8 +1,9 @@
 /// <reference path="def/angular.d.ts" />
 /// <reference path="def/angular-ui-router.d.ts" />
 /// <reference path="info.d.ts" />
-angular.module("newTaskApp").controller("DetailsCtrl", function DetailsCtrl($scope, $state, taskInfo) {
+angular.module("newTaskApp").controller("DetailsCtrl", function DetailsCtrl($scope, $state, taskInfo, $rootScope) {
     console.log("Details state loaded");
+    $rootScope.history++;
     $scope.title = "";
     $scope.description = "";
     $scope.next = function () {

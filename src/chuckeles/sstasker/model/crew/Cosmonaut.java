@@ -3,6 +3,7 @@ package chuckeles.sstasker.model.crew;
 import chuckeles.sstasker.model.Spaceship;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
+import chuckeles.sstasker.model.parts.Wheel;
 import chuckeles.sstasker.system.Constants;
 
 /**
@@ -55,6 +56,13 @@ public abstract class Cosmonaut {
     mOxygen = Math.max(0.0, mOxygen - oxygen);
   }
 
+  /**
+   * Kill the cosmonaut.
+   */
+  public void Kill() {
+    mAlive = false;
+  }
+
   //region Repair
 
   /**
@@ -72,6 +80,14 @@ public abstract class Cosmonaut {
    * @see OxygenGenerator
    */
   public abstract void Repair(OxygenGenerator oxygenGenerator);
+
+  /**
+   * Make the cosmonaut repair a wheel.
+   *
+   * @param wheel Wheel to repair
+   * @see Wheel
+   */
+  public abstract void Repair(Wheel wheel);
 
   //endregion
 
@@ -109,6 +125,15 @@ public abstract class Cosmonaut {
     return mOxygen;
   }
 
+  /**
+   * Check if the cosmonaut is still breathing.
+   *
+   * @return True if alive, false otherwise
+   */
+  public boolean IsAlive() {
+    return mAlive;
+  }
+
   //endregion
 
   //endregion
@@ -128,6 +153,11 @@ public abstract class Cosmonaut {
    * @see Constants#MAX_OXYGEN_COSMONAUT
    */
   private double mOxygen = Constants.MAX_OXYGEN_COSMONAUT;
+
+  /**
+   * Whether the cosmonaut is currently alive.
+   */
+  protected boolean mAlive = true;
 
   //endregion
 
