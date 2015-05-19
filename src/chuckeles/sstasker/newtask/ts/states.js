@@ -2,7 +2,7 @@
 /// <reference path="def/angular-ui-router.d.ts" />
 angular.module("newTaskApp").config(function StateConfig($stateProvider) {
     $stateProvider.state("type", {
-        url: "/type",
+        url: "/",
         templateUrl: "html/type.html",
         controller: "TypeCtrl"
     }).state("repair", {

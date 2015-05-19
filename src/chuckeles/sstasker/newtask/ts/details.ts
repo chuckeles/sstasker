@@ -21,8 +21,10 @@ angular.module("newTaskApp")
   .controller("DetailsCtrl", function DetailsCtrl(
     $scope : IDetailsCtrlScope,
     $state : ng.ui.IStateService,
-    taskInfo : TaskInfo) {
+    taskInfo : TaskInfo,
+    $rootScope) {
     console.log("Details state loaded");
+    $rootScope.history++;
 
     $scope.title = "";
     $scope.description = "";

@@ -8,7 +8,7 @@ angular.module("newTaskApp")
     $stateProvider
 
       .state("type", {
-        url: "/type",
+        url: "/",
         templateUrl: "html/type.html",
         controller: "TypeCtrl"
       })

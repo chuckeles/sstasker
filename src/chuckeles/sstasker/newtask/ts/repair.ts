@@ -40,8 +40,10 @@ angular.module("newTaskApp")
   .controller("RepairCtrl", function RepairCtrl(
     $scope : IRepairCtrlScope,
     $state : ng.ui.IStateService,
-    taskInfo : TaskInfo) {
+    taskInfo : TaskInfo,
+    $rootScope) {
     console.log("Repair state loaded");
+    $rootScope.history++;
 
     $scope.part = null;
     $scope.next = function () {

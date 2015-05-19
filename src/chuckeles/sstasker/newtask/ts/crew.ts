@@ -25,8 +25,10 @@ angular.module("newTaskApp")
   .controller("CrewCtrl", function CrewCtrl(
     $scope : ICrewCtrlScope,
     $state : ng.ui.IStateService,
-    taskInfo : TaskInfo) {
+    taskInfo : TaskInfo,
+    $rootScope) {
     console.log("Crew state loaded");
+    $rootScope.history++;
 
     $scope.next = function() {
       taskInfo.members = [];

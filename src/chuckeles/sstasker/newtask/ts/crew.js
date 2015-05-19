@@ -12,8 +12,9 @@ var Cosmonaut = (function () {
     }
     return Cosmonaut;
 })();
-angular.module("newTaskApp").controller("CrewCtrl", function CrewCtrl($scope, $state, taskInfo) {
+angular.module("newTaskApp").controller("CrewCtrl", function CrewCtrl($scope, $state, taskInfo, $rootScope) {
     console.log("Crew state loaded");
+    $rootScope.history++;
     $scope.next = function () {
         taskInfo.members = [];
         for (var i = 0; i < $scope.selected.length; ++i)

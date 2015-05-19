@@ -14,8 +14,9 @@ var Part = (function () {
     }
     return Part;
 })();
-angular.module("newTaskApp").controller("RepairCtrl", function RepairCtrl($scope, $state, taskInfo) {
+angular.module("newTaskApp").controller("RepairCtrl", function RepairCtrl($scope, $state, taskInfo, $rootScope) {
     console.log("Repair state loaded");
+    $rootScope.history++;
     $scope.part = null;
     $scope.next = function () {
         if (!$scope.part)
