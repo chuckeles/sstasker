@@ -3,6 +3,7 @@ package chuckeles.sstasker.model;
 import chuckeles.sstasker.model.crew.Cosmonaut;
 import chuckeles.sstasker.model.crew.Engineer;
 import chuckeles.sstasker.model.crew.GeneratorLover;
+import chuckeles.sstasker.model.crew.Pilot;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;
@@ -97,8 +98,8 @@ public class Spaceship {
 
     // add crew
     Log.Instance().Log("Adding crew");
+    mCrew.add(new Pilot("Džejky"));
     mCrew.add(new Engineer("Patričko"));
-    mCrew.add(new Engineer("Džejky"));
     mCrew.add(new Engineer("Domčo"));
     mCrew.add(new GeneratorLover("Pišta"));
     Log.Instance().Log("Crew added: " + mCrew.toString());
