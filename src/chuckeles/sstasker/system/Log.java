@@ -28,6 +28,7 @@ public class Log {
    * Shortcut for WriteTime and WriteLn.
    *
    * @param text String to log
+   * @return Log instance
    * @see #WriteTime()
    * @see #WriteLn(String)
    */
@@ -41,6 +42,7 @@ public class Log {
    * Log a string.
    *
    * @param text String to log
+   * @return Log instance
    */
   public Log Write(String text) {
     System.out.print(text);
@@ -50,6 +52,8 @@ public class Log {
 
   /**
    * Write a new line to the log.
+   *
+   * @return Log instance
    */
   public Log WriteLn() {
     System.out.println();
@@ -61,6 +65,7 @@ public class Log {
    * Log a string and add a new line.
    *
    * @param text String to log
+   * @return Log instance
    */
   public Log WriteLn(String text) {
     Write(text);
@@ -72,6 +77,7 @@ public class Log {
   /**
    * Log current system time. Writes it in this format: "[h:m:s] ". Uses new Date.
    *
+   * @return Log instance
    * @see Date
    */
   public Log WriteTime() {
