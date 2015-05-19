@@ -65,7 +65,7 @@ public class Engineer extends Cosmonaut {
 
   @Override
   public void Repair(Generator generator) {
-    Log.Instance().Log("Engineer " + GetName() + " would like to repair the Generator but doesn't even" +
+    Log.Instance().Log("Engineer " + GetName() + " would like to repair the generator but doesn't even" +
         " know how it works");
     UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " nepozná generátor a preto ho nevie opraviť");
   }
@@ -73,7 +73,6 @@ public class Engineer extends Cosmonaut {
   @Override
   public void Repair(OxygenGenerator oxygenGenerator) {
     // try to repair the oxygen generator
-    // TODO: Change, will involve more conditions, e. g. skill
     if (Math.random() < 0.1) {
       oxygenGenerator.Repair();
       Log.Instance().Log("Engineer " + GetName() + " repaired the oxygen generator");

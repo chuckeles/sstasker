@@ -2,6 +2,7 @@ package chuckeles.sstasker.model;
 
 import chuckeles.sstasker.model.crew.Cosmonaut;
 import chuckeles.sstasker.model.crew.Engineer;
+import chuckeles.sstasker.model.crew.GeneratorLover;
 import chuckeles.sstasker.model.parts.Generator;
 import chuckeles.sstasker.model.parts.OxygenGenerator;
 import chuckeles.sstasker.model.parts.Part;
@@ -55,9 +56,9 @@ public class Spaceship {
         .WriteLn("Aktualizujem vesmírnu loď")
         .WriteLn();
 
-    mParts.forEach(part -> part.Update());
-    mCrew.forEach(cosmonaut -> cosmonaut.Update());
-    mTasks.forEach(task -> task.Update());
+    mParts.forEach(Part::Update);
+    mCrew.forEach(Cosmonaut::Update);
+    mTasks.forEach(Task::Update);
 
     UpdateLog.Instance()
         .WriteLn()
@@ -98,7 +99,7 @@ public class Spaceship {
     mCrew.add(new Engineer("Patričko"));
     mCrew.add(new Engineer("Džejky"));
     mCrew.add(new Engineer("Domčo"));
-    mCrew.add(new Engineer("Pišta"));
+    mCrew.add(new GeneratorLover("Pišta"));
     Log.Instance().Log("Crew added: " + mCrew.toString());
 
     // add parts
