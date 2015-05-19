@@ -31,6 +31,11 @@ public class Engineer extends Cosmonaut {
 
   @Override
   public void Update() {
+    if (!mAlive) {
+      UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " je **mŕtvy**");
+      return;
+    }
+
     // lower oxygen
     SubtractOxygen(Constants.OXYGEN_CONSUMPTION_COSMONAUT);
 
@@ -43,10 +48,19 @@ public class Engineer extends Cosmonaut {
       }
     });
 
-    // TODO: Kill if no oxygen
+    if (GetOxygen() <= 0.01) {
+      // kill
+      mAlive = false;
 
-    Log.Instance().Log("Engineer " + GetName() + " updated, oxygen level: " + (int)(GetOxygen() / Constants.MAX_OXYGEN_COSMONAUT * 100) + "%");
-    UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " bol aktualizovaný, kyslík: " + (int) (GetOxygen() / Constants.MAX_OXYGEN_COSMONAUT * 100) + "%");
+      // log
+      Log.Instance().Log("Engineer " + GetName() + " has DIED!!! [no oxygen]");
+      UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " **ZOMREL**!!! [došiel mu kyslík]");
+    }
+
+    if (mAlive) {
+      Log.Instance().Log("Engineer " + GetName() + " updated, oxygen level: " + (int) (GetOxygen() / Constants.MAX_OXYGEN_COSMONAUT * 100) + "%");
+      UpdateLog.Instance().WriteLn("Inžinier " + GetName() + " bol aktualizovaný, kyslík: " + (int) (GetOxygen() / Constants.MAX_OXYGEN_COSMONAUT * 100) + "%");
+    }
   }
 
   @Override

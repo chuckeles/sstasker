@@ -129,6 +129,11 @@ public abstract class Cosmonaut {
    */
   private double mOxygen = Constants.MAX_OXYGEN_COSMONAUT;
 
+  /**
+   * Whether the cosmonaut is currently alive.
+   */
+  protected boolean mAlive = true;
+
   //endregion
 
 }
