@@ -16,7 +16,7 @@ angular
     console.log("AngularJS loaded, going to the welcome state");
 
     // go to welcome state
-    $state.go("dashboard"); // TODO: Change back to welcome
+    $state.go("welcome");
   }]);
 
 //@prepros-append constants.js

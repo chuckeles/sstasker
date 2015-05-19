@@ -21,7 +21,7 @@ public class Inventory {
    * Add new item stack to the inventory.
    *
    * @param stack Stack to add
-   * @throws InventoryFullException
+   * @throws InventoryFullException When the inventory is already full
    */
   public void Add(ItemStack stack) throws InventoryFullException {
     if (mStacks.size() < Constants.MAX_INVENTORY_SIZE)
