@@ -65,6 +65,11 @@ public class GeneratorLover extends Engineer {
 
   @Override
   public void Repair(Generator generator) {
+    if (!mAlive) {
+      UpdateLog.Instance().WriteLn("Milovník generátorov " + GetName() + " by rád niečo opravoval, ale je mŕtvy");
+      return;
+    }
+
     // try to repair the generator
     if (Math.random() < 0.02) {
       generator.Repair();
@@ -81,6 +86,11 @@ public class GeneratorLover extends Engineer {
 
   @Override
   public void Repair(OxygenGenerator oxygenGenerator) {
+    if (!mAlive) {
+      UpdateLog.Instance().WriteLn("Milovník generátorov " + GetName() + " by rád niečo opravoval, ale je mŕtvy");
+      return;
+    }
+
     Log.Instance().Log("Generator lover " + GetName() + " refuses to touch anything else than a generator");
     UpdateLog.Instance().WriteLn("Milovník generátorov " + GetName() + " sa odmieta čo i len pozrieť na generátor " +
         "kyslíka, miluje predsa iba generátor, nič iné");
