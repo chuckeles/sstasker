@@ -5,4 +5,10 @@ angular.module(
   [
     "ngAnimate",
     "ui.router"
-  ]);
+  ])
+
+  .controller("mainCtrl", function mainCtrl($scope) {
+    $scope.back = function() {
+      history.go(-1);
+    };
+  });

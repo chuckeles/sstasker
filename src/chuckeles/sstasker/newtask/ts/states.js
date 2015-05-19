@@ -2,15 +2,19 @@
 /// <reference path="def/angular-ui-router.d.ts" />
 angular.module("newTaskApp").config(function StateConfig($stateProvider) {
     $stateProvider.state("type", {
+        url: "/type",
         templateUrl: "html/type.html",
         controller: "TypeCtrl"
     }).state("repair", {
+        url: "/repair",
         templateUrl: "html/repair.html",
         controller: "RepairCtrl"
     }).state("crew", {
+        url: "/crew",
         templateUrl: "html/crew.html",
         controller: "CrewCtrl"
     }).state("details", {
+        url: "/details",
         templateUrl: "html/details.html",
         controller: "DetailsCtrl"
     });
