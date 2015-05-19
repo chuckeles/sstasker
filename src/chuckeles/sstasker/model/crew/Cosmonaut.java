@@ -56,6 +56,13 @@ public abstract class Cosmonaut {
     mOxygen = Math.max(0.0, mOxygen - oxygen);
   }
 
+  /**
+   * Kill the cosmonaut.
+   */
+  public void Kill() {
+    mAlive = false;
+  }
+
   //region Repair
 
   /**
@@ -116,6 +123,15 @@ public abstract class Cosmonaut {
    */
   public double GetOxygen() {
     return mOxygen;
+  }
+
+  /**
+   * Check if the cosmonaut is still breathing.
+   *
+   * @return True if alive, false otherwise
+   */
+  public boolean IsAlive() {
+    return mAlive;
   }
 
   //endregion

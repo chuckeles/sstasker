@@ -18,13 +18,31 @@ public class Wheel extends PartWithoutHealth {
 
   @Override
   public void Update() {
+    // damage crew
+    if (!Works() || mNotControlledFor > 2) {
+      Log.Instance().Log("Wheel damaging crew");
+
+      Spaceship.Instance().GetCrew().forEach(cosmonaut -> {
+        // kill >:D
+        if (cosmonaut.IsAlive() &&  Math.random() < 0.04) {
+          cosmonaut.Kill();
+
+          Log.Instance().Log(cosmonaut.GetName() + " has been killed by wheel");
+          UpdateLog.Instance().WriteLn(cosmonaut.GetName() + " bol prizabitý, pretože loď nikto neovláda" +
+              " a švaclo ho o stenu");
+        }
+      });
+    }
+
     if (!Works()) {
       Log.Instance().Log("Wheel updated but it is broken");
       UpdateLog.Instance().WriteLn("W.H.E.E.L. je pokazený");
 
-      // TODO: Damage crew (the ship is uncontrollable!)
       return;
     }
+
+    // increase not controlled
+    ++mNotControlledFor;
 
     // decrease reliability
     mReliability *= 0.99;
@@ -67,6 +85,13 @@ public class Wheel extends PartWithoutHealth {
   @Override
   public void Break() {
     mWorks = false; // TODO: Dispatch some sort of event
+  }
+
+  /**
+   * Control the wheel, preventing it from killing the crew.
+   */
+  public void Control() {
+    mNotControlledFor = 0;
   }
 
   //region Getters
@@ -117,6 +142,11 @@ public class Wheel extends PartWithoutHealth {
    * How much energy the wheel requires to function.
    */
   private double mConsumption = 5.0;
+
+  /**
+   * How many turns has it not been operated by a pilot.
+   */
+  private int mNotControlledFor = 0;
 
   //endregion
 
